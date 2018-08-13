@@ -4,7 +4,7 @@
   "description": "Make Clean World!",
   "main": "app.js",
   "scripts": {
-    "test": "node app.js"
+    "test": "node ./bin/www.js"
   },
   "repository": {
     "type": "git",
