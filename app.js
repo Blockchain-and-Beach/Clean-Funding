@@ -5,7 +5,8 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const helmet = require('helmet');
 const compression = require('compression');
-const mongoose = require('mongoose');
+const session = require('express-session');
+const db = require('./lib/db');
 
 const app = express();
 
@@ -17,14 +18,17 @@ app.use(helmet());
 app.use(compression());
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'static')));
+app.use(session({
+    secret: 'Clean-Funding Project',
+    resave : false,
+    saveUninitialized: true,
+    cookie : {secure : true}
+}));
+app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.Promise = global.Promise;
-mongoose.connect('localhost:5000')
-    .then(debug('Successfully connected on MongoDB'))
-    .catch(e=>{debug(e)});
+db();
 
 // catch 404 and forward to error handler
 app.use((req, res, next)=>{

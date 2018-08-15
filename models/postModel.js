@@ -13,8 +13,9 @@ const postSchema = new mongoose.Schema({
     content : {type: String, required: true},
     author : {type: organizationSchema, required: true},
     balance : {type: Number,default: 0},
-    comments: [{type: commentSchema}]
+    comments: [{type: commentSchema}],
+    like : {type: Number, default: 0}
 });
 
 exports.postSchema = postSchema;
-module.exports = new mongoose.Model('Post', postSchema);
+exports.postModel = mongoose.Model('Post', postSchema);
