@@ -6,8 +6,7 @@ router.get('/',(req,res)=>{
     Post.find({})
         .sort({Date:-1})
         .exec(results=>{
-            if(err) console.error(err);
-            else res.render('posts',{posts:results});
+            res.render('posts',{posts:results});
         })
         .catch(err => console.error(err));
 })
@@ -20,5 +19,10 @@ router.get('/',(req,res)=>{
         res.render('post',{post:post});
     })
     .post('/upload',(req,res)=>{
-        
+        if(!findByTitle(req.body.title)){
+            const post = new Post(req.body);
+            post.save();
+            res.redirect('/post');
+        }else
+            res.send('Already exist title');
     });
