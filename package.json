@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Blockchain-and-Beach/Clean_Donate#readme",
   "dependencies": {
+    "@types/node": "^10.7.1",
     "compression": "^1.7.3",
     "cookie-parser": "^1.4.3",
     "debug": "^3.1.0",
