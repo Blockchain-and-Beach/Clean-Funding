@@ -18,14 +18,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="../public/stylesheets/main.css">
-    <!-- <link rel="stylesheet" href="/stylesheets/main.css"> -->
-
-    <!-- JS -->
-    <script src="../public/scripts/main.js"></script>
-    <!-- <script src="/scripts/main.js"></script> -->
-
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -34,6 +26,14 @@
 
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.8/js/mdb.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../public/stylesheets/main.css">
+    <!-- <link rel="stylesheet" href="/stylesheets/main.css"> -->
+
+    <!-- JS -->
+    <script src="../public/scripts/main.js"></script>
+    <!-- <script src="/scripts/main.js"></script> -->
 
 
 </head>
@@ -73,20 +73,21 @@
             </ul>
 
             
-            <ul class="navbar-nav">
+            <!-- <ul class="navbar-nav">
                 <a class="text-center" href="#">
                     <img class="m-auto" src="../public/images/logo/logo-3-64.svg">
-                    <!-- <img class="m-auto" src="/images/logo/logo-3-64.svg"> -->
                 </a>
-            </ul>
+            </ul> -->
 
             <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
-                <li class="dropdown order-1">
-                    <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle" aria-expanded="false">Sign Up <span class="caret"></span></button>
-                    <ul class="dropdown-menu mt-0">
-                       <li class="px-1 py-2">
-                           <!-- 회원가입 폼 -->
-                           <form action="@@@@@@@@@@ 폼 보낼 위치 @@@@@@@@@@" method="POST" class="form" role="form">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-secondary" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        SIGN UP
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right mt-0 asdf">
+                        <li class="px-1 py-2">
+                            <!-- 회원가입 폼 -->
+                            <form action="@@@@@@@@@@ 폼 보낼 위치 @@@@@@@@@@" method="POST" class="form" role="form">
                                 <div class="form-group">
                                     <input name="@@@@@ nickname @@@@@" id="nicknameInput" placeholder="nickname" class="form-control form-control-sm" type="text" required="">
                                 </div>
@@ -106,14 +107,16 @@
                         </li>
                     </ul>
                 </li>
-                <li class="dropdown order-1">
-                    <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle" aria-expanded="false">Login <span class="caret"></span></button>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-secondary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        LOGIN
+                    </a>
                     <ul class="dropdown-menu dropdown-menu-right mt-0">
-                       <li class="px-1 py-2">
-                           <!-- 로그인 폼 -->
-                           <form action="@@@@@@@@@@ 폼 보낼 위치 @@@@@@@@@@" method="POST" class="form" role="form">
+                        <li class="px-1 py-2">
+                            <!-- 로그인 폼 -->
+                            <form action="@@@@@@@@@@ 폼 보낼 위치 @@@@@@@@@@" method="POST" class="form" role="form">
                                 <div class="form-group">
-                                    <input name="@@@@@ id @@@@@"  id="idInput" placeholder="ID" class="form-control form-control-sm" type="text" required="">
+                                    <input name="@@@@@ id @@@@@" placeholder="ID" class="form-control form-control-sm" type="text" required="">
                                 </div>
                                 <div class="form-group">
                                     <input name="@@@@@ password @@@@@" id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="password" required="">
@@ -136,8 +139,45 @@
     <!-- header - end -->
 
 
-    <div class="container bg-white mt-7">
-        asdf
+    <div class="container mt-7 board">
+        <div class="sbg-dark">
+            <!-- <a class="bg-dark text-light list-inline-item mt-3 ml-2 mr-2 bulletin">
+                <img class="bulletin-img mb-3" src="http://menu.mt.co.kr/ize/thumb/2014/04/06/2014042722487270465_1.jpg">
+                <h4>수학공부 열심히한다</h4>
+            </a>
+            <a class="bg-dark text-light list-inline-item mt-3 ml-2 mr-2 bulletin">
+                <img class="bulletin-img mb-3" src="http://www.mediaus.co.kr/news/photo/201404/41446_94336_481.jpg">
+                <h4>수학마스터 세미쨩</h4>
+            </a>
+            <a class="bg-dark text-light list-inline-item mt-3 ml-2 mr-2 bulletin">
+                <img class="bulletin-img mb-3" src="https://i.ytimg.com/vi/NPu8KW1pFAk/maxresdefault.jpg">
+                <h4>zI존 귀요미</h4>
+            </a>
+            <a class="bg-dark text-light list-inline-item mt-3 ml-2 mr-2 bulletin">
+                <img class="bulletin-img mb-3" src="https://cdn.namuwikiusercontent.com/s/f8db97935ccdcd1663032ab8cc6e9b3a271b067123b2c2f72bfe4a8b23831bce3f697e9a9af9db28dedd1ec231afa17acb1a3709eefbb00063438aa5d73aa364817b73810a17c98e63837753fa166479?e=1537895520&k=0ahhsqZksvGWWB08YWIFdw">
+                <h4>세미만 판다</h4>
+            </a>
+            <a class="bg-dark text-light list-inline-item mt-3 ml-2 mr-2 bulletin">
+                <img class="bulletin-img mb-3" src="https://i.pximg.net/c/600x600/img-master/img/2014/04/27/14/29/42/43131328_p0_master1200.jpg">
+                <h4>세미만 판다</h4>
+            </a> -->
+            <a class="bg-dark text-light list-inline-item mt-3 ml-2 mr-2 bulletin">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, ipsum itaque. Aspernatur delectus nobis fugiat architecto laborum nemo adipisci nam provident saepe vitae, facere quia est quis nostrum totam repellat nulla. Laudantium.
+            </a>
+            <a class="bg-dark text-light list-inline-item mt-3 ml-2 mr-2 bulletin">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor officiis, officia eaque laborum doloribus, mollitia aliquid, voluptates deleniti vero nihil necessitatibus fugit fuga autem enim laboriosam reprehenderit maxime facere. Quibusdam, aliquid iure?
+            </a>
+            <a class="bg-dark text-light list-inline-item mt-3 ml-2 mr-2 bulletin">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis aliquid voluptatum quos amet! Culpa porro, quod eius tempore, distinctio, minus quae necessitatibus eaque voluptatum ab ex praesentium voluptates asperiores amet debitis magnam!
+            </a>
+            <a class="bg-dark text-light list-inline-item mt-3 ml-2 mr-2 bulletin">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, voluptates totam. Nulla rem, sit, esse hic dolorum incidunt excepturi et quis soluta porro quos, facere qui earum dolore atque provident similique at.
+            </a>
+            <a class="bg-dark text-light list-inline-item mt-3 ml-2 mr-2 bulletin">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, ipsum itaque. Aspernatur delectus nobis fugiat architecto laborum nemo adipisci nam provident saepe vitae, facere quia est quis nostrum totam repellat nulla. Laudantium.
+            </a>
+
+        </div>
     </div>
 
 
