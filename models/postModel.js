@@ -9,12 +9,22 @@ const commentSchema = new mongoose.Schema({
 });
 
 const postSchema = new mongoose.Schema({
-    title:{ type: String, required: true, index:true},
+    title:{ type: String, unique: true, required: true, index:true},
     content : {type: String, required: true},
     author : {type: organizationSchema, required: true},
     balance : {type: Number,default: 0},
-    comments: [{type: commentSchema}]
+    comments: [{type: commentSchema}],
+    like : {type: Number, default: 0},
+    Date : {type: Date, default: Date.now}
 });
 
+postSchema.statics.findByTitle = async title=>{
+    try{
+        return await this.findOne({title:title});
+    } catch(err){
+        console.error(err);
+    }
+};
+
 exports.postSchema = postSchema;
-module.exports = new mongoose.Model('Post', postSchema);
+exports.postModel = mongoose.Model('Post', postSchema);
