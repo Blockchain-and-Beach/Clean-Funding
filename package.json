@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "node ./bin/www.js",
-    "claen": "rm -rf ./dist"
+    "build": "tsc",
+    "clean": "rm -rf ./dist"
   },
   "repository": {
     "type": "git",
