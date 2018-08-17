@@ -8,10 +8,11 @@
       "dom"
     ],
     "sourceMap": true,
-    "noStrictGenericChecks": true
+    "noStrictGenericChecks": true,
+    "outDir": "dist"
   },
   "include": [
-    "lib/*"
+    "lib/*.ts"
   ],
   "exclude": [
     "node_modules"
