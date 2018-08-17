@@ -30,7 +30,8 @@ const postSchema = new mongoose.Schema({
     paymentLists: [{type:paymentListSchema}],
     like : {type: Number, default: 0},
     Date : {type: Date, default: Date.now},
-    address: {type:String, required: true, unique: true}
+    address: {type:String, required: true, unique: true},
+    goalAmount: {type:Number, required: true}
 });
 
 postSchema.statics.findByTitle = async title=>{
