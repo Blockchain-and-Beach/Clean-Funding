@@ -1,9 +1,9 @@
 import {
-    Account, Address, Deadline, UInt64, NetworkType, PlainMessage, TransferTransaction, Mosaic, MosaicId, TransactionHttp, PublicAccount, ModifyMultisigAccountTransaction, MultisigCosignatoryModification, MultisigCosignatoryModificationType, Transaction
+    Account, Address, Deadline, UInt64, NetworkType, PlainMessage, TransferTransaction, Mosaic, MosaicId, TransactionHttp
 } from 'nem2-sdk';
 
-function charge(address: string, money: number) : void {         //address: 이 버튼을 누르는 후원자 계정의 주소
-
+module.exports = (address: string, money: number) : void => {
+    //address: 이 버튼을 누르는 후원자 계정의 주소
     //교환 트랜잭션: 네임스페이스 foo 안의 token이라는 모자이크를 10만큼 address에 줌
     const transferTransaction = TransferTransaction.create(
         Deadline.create(),
@@ -26,4 +26,4 @@ function charge(address: string, money: number) : void {         //address: 이 
         x => console.log(x),
         err => console.log(err)
     );
-}
+};
