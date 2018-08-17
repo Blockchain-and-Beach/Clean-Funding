@@ -6,7 +6,7 @@ const organizationSchema = new mongoose.Schema({
     ID :{type: String, required: true, unique: true},
     PW: {type: String, required: true},
     name: {type: String, required: true, unique: true, index: true},
-    publicKey: {type: String, required: true, unique: true},
+    address: {type: String, required: true, unique: true},
     posts:[{type: postSchema}]
 });
 
