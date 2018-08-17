@@ -3,13 +3,7 @@ const router = require('express').Router;
 const User = require('../models/userModel').userModel;
 const Organization = require('../models/organizationModel').organizationModel;
 
-router.get('/user',(req,res)=>{
-        res.render('signUp-user');
-    })
-    .get('/organization',(req,res)=>{
-        res.render('signUp-organization');
-    })
-    .post('/user',(req,res)=>{
+router.post('/user',(req,res)=>{
         if(User.statics.validate(req.body)){
             const user = new User(req.body);
             user.save();

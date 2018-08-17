@@ -13,7 +13,7 @@ router.get('/',res =>{
         account.methods.comparePW(PW,(err, result)=>{
             if(err) console.error(err);
             else if(result){
-                req.session.signed = result.nickname;
+                req.session.signed = result.ID;
                 res.redirect('/');
             }
             else res.send('login failed');

@@ -3,12 +3,11 @@ const mongoose = require('mongoose');
 const Post = require('./postModel').postModel;
 
 const userSchema = new mongoose.Schema({
-    ID: {type: String, required:true, unique: true},
+    ID: {type: String, required:true, unique: true, index: true},
     PW: {type : String, required:true},
-    nickname: {type: String, required: true, unique: true, index: true},
+    nickname: {type: String, required: true, unique: true},
     address : {type: String, required: true, unique: true},
-    sponsoredPost: {type:[mongoose.Schema.Types.ObjectId], ref: 'Post', default: []},
-    balance: {type: Number,default: 0}
+    sponsoredPosts: [{type:mongoose.Schema.Types.ObjectId, ref: 'Post'}]
 });
 userSchema.statics.findByID = async ID=>{
     return await this.findOne({ID:ID});
