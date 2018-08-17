@@ -30,9 +30,17 @@
     "express-session": "^1.15.6",
     "helmet": "^3.13.0",
     "http-errors": "^1.7.0",
+    "mongoose": "^5.2.8",
     "morgan": "^1.9.0",
     "nem2-sdk": "^0.10.1",
-    "rxjs": "^6.2.2",
-    "mongoose": "^5.2.8"
+    "request": "^2.88.0",
+    "rxjs": "^6.2.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.4",
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.1"
   }
 }

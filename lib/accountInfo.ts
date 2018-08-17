@@ -50,7 +50,7 @@ class User{
 }
 */
 
-function makeAccount(ID:string/*, PW:string, nickname:string, walletName?:string*/) : object{
+function makeAccount() : object{
         const account = Account.generateNewAccount(NetworkType.MIJIN_TEST);
         // 클라이언트에게 쏴주면 된다. 
         console.log('Your new account address is:', account.address.pretty(), 
@@ -63,4 +63,3 @@ function makeAccount(ID:string/*, PW:string, nickname:string, walletName?:string
         return returnobj;
 }
 
-makeAccount("fuck");

@@ -9,7 +9,7 @@
         "noStrictGenericChecks": true
     },
     "include": [
-        "lib/*"
+        "lib/*.ts"
     ],
     "exclude": [
         "node_modules"
