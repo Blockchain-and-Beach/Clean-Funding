@@ -11,7 +11,7 @@
     "noStrictGenericChecks": true
   },
   "include": [
-    "index.ts"
+    "lib/*"
   ],
   "exclude": [
     "node_modules"
