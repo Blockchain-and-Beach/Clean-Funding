@@ -6,7 +6,7 @@ const logger = require('morgan');
 const helmet = require('helmet');
 const compression = require('compression');
 const session = require('express-session');
-const db = require('./lib/db');
+const db = require('./dist/db');
 
 const app = express();
 
@@ -18,13 +18,13 @@ app.use(helmet());
 app.use(compression());
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use(session({
     secret: 'Clean-Funding Project',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true }
+    cookie: {secure: true}
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
