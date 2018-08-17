@@ -15,3 +15,4 @@ router.get('/',(req,res)=>{
             .then(()=>res.send('Success Charge'))
             .catch(err=>console.error(err));
     });
+module.exports = router;

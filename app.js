@@ -8,6 +8,12 @@ const compression = require('compression');
 const session = require('express-session');
 const db = require('./lib/db');
 
+const charge = require('./routes/charge');
+const login  = require('./routes/login');
+const payment = require('./routes/payment');
+const post = require('./routes/post');
+const signUp = require('./routes/signUp');
+
 const app = express();
 
 // view engine setup
@@ -29,6 +35,12 @@ app.use(session({
 app.use(express.static(path.join(__dirname, 'public')));
 
 db();
+
+app.use('/',post);
+app.use('/login',login);
+app.use('/signUp',signUp);
+app.use('/payment',payment);
+app.use('/charge',charge);
 
 // catch 404 and forward to error handler
 app.use((req, res, next)=>{
