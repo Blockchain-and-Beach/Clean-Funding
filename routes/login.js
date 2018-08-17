@@ -13,7 +13,7 @@ router.get('/',res =>{
         account.methods.comparePW(PW,(err, result)=>{
             if(err) console.error(err);
             else if(result){
-                req.session.signed = 'user';
+                req.session.signed = result.nickname;
                 res.redirect('/');
             }
             else res.send('login failed');
@@ -26,7 +26,7 @@ router.get('/',res =>{
         account.methods.comparePW(PW,(err, result)=>{
             if(err) console.error(err);
             else if(result){
-                req.session.signed = 'organization';
+                req.session.signed = result.name;
                 res.redirect('/');
             }
             else res.send('login failed');
