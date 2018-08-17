@@ -30,14 +30,10 @@
     "express-session": "^1.15.6",
     "helmet": "^3.13.0",
     "http-errors": "^1.7.0",
-<<<<<<< HEAD
+    "mongoose": "^5.2.8",
     "morgan": "^1.9.0",
     "nem-sdk": "^1.6.7",
     "nem2-sdk": "^0.10.1",
     "rxjs": "^6.2.2"
-=======
-    "mongoose": "^5.2.8",
-    "morgan": "^1.9.0"
->>>>>>> origin/loapcket
   }
 }
