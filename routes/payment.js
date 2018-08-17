@@ -1,6 +1,7 @@
 const router = require('express').Router;
 
-router.get('/',(req,res)=>{
+const Post  = require('../models/postModel').postModel;
 
-})
-    .post('')
+router.get('/:title',(req,res)=>{
+    res.send(Post.findByTitle(req.params.title).paymentLists);
+});
