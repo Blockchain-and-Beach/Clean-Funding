@@ -8,12 +8,12 @@ function charge(address: string, money: number) : void {         //address: 이 
     const transferTransaction = TransferTransaction.create(
         Deadline.create(),
         Address.createFromRawAddress(address),
-        [new Mosaic(new MosaicId('foo:token'), UInt64.fromUint(money))],
+        [new Mosaic(new MosaicId('rootnamespace:src'), UInt64.fromUint(money))],
         PlainMessage.create('충전 완료'),
         NetworkType.MIJIN_TEST
     );
     
-    //모자이크를 줄 계정의 private키
+    //모자이크를 줄 계정의 private키. 돈을 보낼 master 계정의 private 키가 필요함.
     const privateKey = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
     const account = Account.createFromPrivateKey(privateKey, NetworkType.MIJIN_TEST);
 

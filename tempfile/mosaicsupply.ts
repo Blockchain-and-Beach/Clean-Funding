@@ -17,7 +17,7 @@ const init = (): void => {
 
     const transactionHttp = new TransactionHttp('http://localhost:3000');
 
-    //namespace의 owner의 private 키
+    //namespace의 owner의 private 키, master 계정의 private키
     const privateKey = 'AAABC5B801F936D03D60EA1C9A6A2D9872B83D41FC80AF6B9747C33D2800ACD8';
     const account = Account.createFromPrivateKey(privateKey, NetworkType.MIJIN_TEST);
 
@@ -40,13 +40,13 @@ const init = (): void => {
 const mosaic_supply = (): void => {
     const transactionHttp = new TransactionHttp('http://localhost:3000');
 
-    //할당 받는 계정의 private 키
-    const privateKey = 'AAABC5B801F936D03D60EA1C9A6A2D9872B83D41FC80AF6B9747C33D2800ACD8';
+    //할당 받는 계정의 private 키, 나중에는 마스터 계정의 Address가 위치해야 함
+    const privateKey = 'F8198655A67278F77524880A1AB592922C12012F9ACA11D146147B231DE961DA';
     const account = Account.createFromPrivateKey(privateKey, NetworkType.MIJIN_TEST);
 
     // Replace with namespace name and mosaic name
     const namespaceName = 'rootnamespace';
-    const mosaicName = 'src';
+    const mosaicName = 'srcc';
     
     //모자이크 정의 트랜잭션
     /*
@@ -111,6 +111,6 @@ const transfer = (money: number): void => {
     transactionHttp.announce(signedTransaction).subscribe(x => console.log(x), err => console.error(err));
 }
 
-init();
+//init();
 mosaic_supply();
-transfer(100);
+//transfer(100);
