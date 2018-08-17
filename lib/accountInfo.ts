@@ -62,5 +62,3 @@ function makeAccount(ID:string/*, PW:string, nickname:string, walletName?:string
         };
         return returnobj;
 }
-
-makeAccount("fuck");
