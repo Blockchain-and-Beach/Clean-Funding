@@ -4,7 +4,8 @@
   "description": "Make Clean World!",
   "main": "app.js",
   "scripts": {
-    "test": "node ./bin/www.js"
+    "test": "node ./bin/www.js",
+    "claen": "rm -rf ./dist"
   },
   "repository": {
     "type": "git",
@@ -30,9 +31,10 @@
     "express-session": "^1.15.6",
     "helmet": "^3.13.0",
     "http-errors": "^1.7.0",
+    "mongoose": "^5.2.8",
     "morgan": "^1.9.0",
     "nem2-sdk": "^0.10.1",
     "rxjs": "^6.2.2",
-    "mongoose": "^5.2.8"
+    "web-push": "^3.3.2"
   }
 }
