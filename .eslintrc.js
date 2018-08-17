@@ -22,6 +22,12 @@ module.exports = {
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "error": {
+            allow: [
+                "warn",
+                "error"
+            ]
+        }
     }
 };
