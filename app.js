@@ -24,7 +24,7 @@ app.use(session({
     secret: 'Clean-Funding Project',
     resave: false,
     saveUninitialized: true,
-    cookie: {secure: true}
+    cookie: {secure: true},
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
