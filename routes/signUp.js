@@ -13,7 +13,7 @@ router.post('/user',(req,res)=>{
             req.body.PW = crypto.createHash('sha512').update(req.body.PW).digest('base64');
             const user = new User(req.body);
             user.save();
-            res.render('private',{privateKey:account.privateKey})
+            res.render('private',{privateKey:account.privateKey});
         }
         else res.send('Already exist ID');
     })
