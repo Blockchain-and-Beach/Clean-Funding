@@ -89,10 +89,25 @@
     padding-top: 7rem !important;
 }
 .menu-r {
+<<<<<<< HEAD
     position: fixed;
     top: 0;
     right: 3rem;
 }
 .b-radius {
     border-radius: 0.25rem
+=======
+    /* position: absolute;
+    top: 0;
+    right: 3rem; */
+    float: right;
+    margin-right: 3rem;
+}
+.b-radius {
+    border-radius: 0.25rem
+}
+.ticket {
+    color: #a1a1a1;
+    float: right;
+>>>>>>> dev
 }
