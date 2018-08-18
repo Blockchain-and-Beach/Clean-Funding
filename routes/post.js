@@ -26,3 +26,5 @@ router.get('/', (req, res) => {
         } else
             res.send('Already exist title');
     });
+
+module.exports = router;

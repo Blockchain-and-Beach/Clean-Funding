@@ -11,16 +11,12 @@ router.get('/', res => {
         const PW = req.body.PW;
         const account = User.statics.findByID(ID);
         account.methods.comparePW(PW, (err, result) => {
-            if (err) {
-                console.error(err);
-            }
+            if (err) console.error(err);
             else if (result) {
-                req.session.signed = result.nickname;
+                req.session.signed = result.ID;
                 res.redirect('/');
             }
-            else {
-                res.send('login failed');
-            }
+            else res.send('login failed');
         });
     })
     .post('/organization', (req, res) => {
@@ -34,7 +30,7 @@ router.get('/', res => {
                 res.redirect('/');
             }
             else res.send('login failed');
-        });
+        })
     });
 
 module.exports = router;
