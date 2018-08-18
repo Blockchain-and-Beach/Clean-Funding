@@ -89,10 +89,16 @@
     padding-top: 7rem !important;
 }
 .menu-r {
-    position: fixed;
+    /* position: absolute;
     top: 0;
-    right: 3rem;
+    right: 3rem; */
+    float: right;
+    margin-right: 3rem;
 }
 .b-radius {
     border-radius: 0.25rem
+}
+.ticket {
+    color: #a1a1a1;
+    float: right;
 }
