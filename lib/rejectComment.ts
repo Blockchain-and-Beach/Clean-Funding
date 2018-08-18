@@ -24,4 +24,6 @@ import {
          [],        // null xem
          PlainMessage.create(rejectMessage),
         NetworkType.MIJIN_TEST);
- }
+}
+
+export {rejectComment};

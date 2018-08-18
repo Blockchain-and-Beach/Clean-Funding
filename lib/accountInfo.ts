@@ -62,3 +62,5 @@ function makeAccount() : object{
         };
         return returnobj;
 }
+
+export {makeAccount};
