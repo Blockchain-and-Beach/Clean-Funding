@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const Organization = require('./organizationModel').organizationModel;
 const userSchema = require('userModel').userSchema;
+const User = require('userModel').userModel;
 
 const commentSchema = new mongoose.Schema({
     author: {type: userSchema, required: true},
@@ -17,8 +18,7 @@ const paymentSchema = new mongoose.Schema({
 const paymentListSchema = new mongoose.Schema({
     payments: {type: [paymentSchema]},
     totalPrice: {type: Number, default: calcTotalPrice},
-    requestDate: {type: Date, default: Date.now, required: true},
-    approvedDate: {type: Date}
+    requestDate: {type: Date, default: Date.now, required: true}
 });
 
 const postSchema = new mongoose.Schema({
@@ -27,11 +27,12 @@ const postSchema = new mongoose.Schema({
     author: {type: mongoose.Schema.Types.ObjectId, ref: 'Organization', required: true},
     balance: {type: Number, default: 0},
     comments: [{type: commentSchema}],
-    paymentLists: [{type: paymentListSchema}],
+    requestPaymentLists: [{type: paymentListSchema}],
     like: {type: Number, default: 0},
     Date: {type: Date, default: Date.now},
     address: {type: String, required: true, unique: true},
-    goalAmount: {type: Number, required: true}
+    goalAmount: {type: Number, required: true},
+    sponsors: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
 });
 
 postSchema.statics.findByTitle = async title => {

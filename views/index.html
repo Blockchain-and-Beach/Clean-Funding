@@ -154,56 +154,12 @@
 <!-- header - end -->
 
 
-<!-- <div class="container mt-7 board">
-    <div class="sbg-dark">
-        <a class="bg-dark text-light list-inline-item mt-3 ml-2 mr-2 bulletin">
-            <img class="bulletin-img mb-3" src="http://menu.mt.co.kr/ize/thumb/2014/04/06/2014042722487270465_1.jpg">
-            <h4>수학공부 열심히한다</h4>
-        </a>
-        <a class="bg-dark text-light list-inline-item mt-3 ml-2 mr-2 bulletin">
-            <img class="bulletin-img mb-3" src="http://www.mediaus.co.kr/news/photo/201404/41446_94336_481.jpg">
-            <h4>수학마스터 세미쨩</h4>
-        </a>
-        <a class="bg-dark text-light list-inline-item mt-3 ml-2 mr-2 bulletin">
-            <img class="bulletin-img mb-3" src="https://i.ytimg.com/vi/NPu8KW1pFAk/maxresdefault.jpg">
-            <h4>zI존 귀요미</h4>
-        </a>
-        <a class="bg-dark text-light list-inline-item mt-3 ml-2 mr-2 bulletin">
-            <img class="bulletin-img mb-3" src="https://cdn.namuwikiusercontent.com/s/f8db97935ccdcd1663032ab8cc6e9b3a271b067123b2c2f72bfe4a8b23831bce3f697e9a9af9db28dedd1ec231afa17acb1a3709eefbb00063438aa5d73aa364817b73810a17c98e63837753fa166479?e=1537895520&k=0ahhsqZksvGWWB08YWIFdw">
-            <h4>세미만 판다</h4>
-        </a>
-        <a class="bg-dark text-light list-inline-item mt-3 ml-2 mr-2 bulletin">
-            <img class="bulletin-img mb-3" src="https://i.pximg.net/c/600x600/img-master/img/2014/04/27/14/29/42/43131328_p0_master1200.jpg">
-            <h4>세미만 판다</h4>
-        </a>
-        <a class="bg-dark text-light list-inline-item mt-3 ml-2 mr-2 bulletin">
-
-        </a>
-        <a class="card">
-            <img class="bulletin-img mb-3" src="<%= @@@@@ 이미지 @@@@@ %>">
-            <h4><%= @@@@@ title @@@@@ %></h4>
-        </a>
-        <a class="bg-dark text-light list-inline-item mt-3 ml-2 mr-2 bulletin">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis aliquid voluptatum quos amet! Culpa porro, quod eius tempore, distinctio, minus quae necessitatibus eaque voluptatum ab ex praesentium voluptates asperiores amet debitis magnam!
-        </a>
-        <a class="bg-dark text-light list-inline-item mt-3 ml-2 mr-2 bulletin">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, voluptates totam. Nulla rem, sit, esse hic dolorum incidunt excepturi et quis soluta porro quos, facere qui earum dolore atque provident similique at.
-        </a>
-        <a class="bg-dark text-light list-inline-item mt-3 ml-2 mr-2 bulletin">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, ipsum itaque. Aspernatur delectus nobis fugiat architecto laborum nemo adipisci nam provident saepe vitae, facere quia est quis nostrum totam repellat nulla. Laudantium.
-        </a>
-
-    </div>
-</div> -->
-
-
-<div class="board mt-7 text-center">
-    <div class="display-inline-block text-left">
-        <div class="card">
-            <div class="card-header">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                         aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%
+    <div class="board mt-7 text-center">
+        <div class="display-inline-block text-left">
+            <div class="card">
+                <div class="card-header">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%</div>
                     </div>
                 </div>
                 <span class="float-left small-2">모금된 금액</span>
@@ -325,14 +281,11 @@
         </div>
     </div>
 
-    <div class="display-inline-block text-left">
-        <div class="card">
-            <div class="card-header">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                         aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
-                         style="width: <% @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%"><% @@@@@ 모인금액 @@@@@ * 100 /
-                        @@@@@ 목표금액 @@@@@ %>%
+        <div class="display-inline-block text-left">
+            <div class="card">
+                <div class="card-header">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%"><%= @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%</div>
                     </div>
                 </div>
                 <span class="float-left small-2">모금된 금액</span>
