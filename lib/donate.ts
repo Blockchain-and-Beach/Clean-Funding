@@ -1,5 +1,5 @@
 import { sendMoney } from "./sendMoney";
-import { TransferTransaction, Deadline } from "nem2-sdk";
+import { TransferTransaction, Deadline, Account, NetworkType } from "nem2-sdk";
 
 /* 
  *  후원 버튼을 눌렀을 때, 
@@ -16,9 +16,14 @@ import { TransferTransaction, Deadline } from "nem2-sdk";
 
 function donate(donaterPrivateKey: string, groupPrivateKey: string, nsName:string, mosaicName:string, coinNum:number, message?:string): void {
     //후원
-    sendMoney('cf', 'src', donaterPrivateKey, groupPrivateKey, coinNum, message);
-    sendMoney(nsName,mosaicName,groupPrivateKey, donaterPrivateKey, coinNum, message);
+    const donatorAccount = Account.createFromPrivateKey(donaterPrivateKey,NetworkType.MIJIN_TEST);
+    const groupAccount = Account.createFromPrivateKey(groupPrivateKey,NetworkType.MIJIN_TEST);
 
+    sendMoney('cfc', 'fuck', donaterPrivateKey, groupAccount.publicKey, coinNum, message);
+    sendMoney(nsName,mosaicName,groupPrivateKey, donatorAccount.publicKey, coinNum, message);
 }
+console.log(process.env.donater);
+console.log(process.env.group);
+donate(process.env.donater, process.env.group, 'alice', 'fuck', 100);
 
 export {donate}

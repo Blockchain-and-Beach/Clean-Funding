@@ -10,7 +10,7 @@ function mosaic_generator(NsName: string, MosaicName: string): void {
     const transactionHttp = new TransactionHttp('http://localhost:3000');
 
     //할당 받는 계정의 private 키, 나중에는 마스터 계정의 Address가 위치해야 함
-    const privateKey = 'F8198655A67278F77524880A1AB592922C12012F9ACA11D146147B231DE961DA';
+    const privateKey = 'AAD1356E211974CE41D2B05ADB1B33CADE9E0ED4F71811FA023ACCA7D8B50432';
     const account = Account.createFromPrivateKey(privateKey, NetworkType.MIJIN_TEST);
     
     //모자이크 정의 트랜잭션
@@ -58,5 +58,5 @@ function mosaic_generator(NsName: string, MosaicName: string): void {
 }
 
 
-mosaic_generator('foo', 'fuck');
+mosaic_generator('alice', 'fuck');
 export {mosaic_generator};
