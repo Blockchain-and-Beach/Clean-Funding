@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clean Funding</title>
+
+    <!-- 파비콘(favicon) -->
+    <link rel="shortcut icon" href="../public/images/logo/logo-3-64.png" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="/images/logo/logo-3-64.png" type="image/x-icon"> -->
+
+    <!-- 제이쿼리(jQuery) & 파퍼(popper) -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <!-- 부트스트랩(bootstrap) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.8/css/mdb.min.css" rel="stylesheet">
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.8/js/mdb.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../public/stylesheets/main.css">
+    <!-- <link rel="stylesheet" href="/stylesheets/main.css"> -->
+
+    <!-- JS -->
+    <script src="../public/scripts/main.js"></script>
+    <!-- <script src="/scripts/main.js"></script> -->
+
+
+</head>
+
+<body class="bg-light">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-secondary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <!-- 닉네임 -->
+                        <%= nickname %>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item not-active" href="#">
+                            <!-- 아이디 -->
+                            <%= id %>
+                        </a>
+                        <a class="dropdown-item" href="#">마이페이지</a>
+                        <a class="dropdown-item" href="#">
+                            나의 월렛<br>
+                            <div class="text-right"><%= money %>원</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">글쓰기</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </li>
+            </ul>
+
+            
+            <!-- <ul class="navbar-nav">
+                <a class="text-center" href="#">
+                    <img class="m-auto" src="../public/images/logo/logo-3-64.svg">
+                </a>
+            </ul> -->
+
+            <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-secondary" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        SIGN UP
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right mt-0 asdf">
+                        <li class="px-1 py-2">
+                            <!-- 회원가입 폼 -->
+                            <form action="@@@@@@@@@@ 폼 보낼 위치 @@@@@@@@@@" method="POST" class="form" role="form">
+                                <div class="cursor-pointe custom-control custom-radio display-inline-block">
+                                    <input value="individuals" type="radio" class="custom-control-input" id="radio1" name="sign-up-radio" checked>
+                                    <label class="custom-control-label" for="radio1">개인</label>
+                                </div>
+                                &nbsp;
+                                <!-- Group of default radios - option 2 -->
+                                <div class="custom-control custom-radio display-inline-block">
+                                    <input value="organizations" type="radio" class="cursor-pointe custom-control-input" id="radio2" name="sign-up-radio">
+                                    <label class="custom-control-label" for="radio2">단체</label>
+                                </div>
+                                <div class="form-group">
+                                    <input name="@@@@@ nickname @@@@@" id="nicknameInput" placeholder="nickname" class="form-control form-control-sm" type="text" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input name="@@@@@ id @@@@@" id="idInput" placeholder="ID" class="form-control form-control-sm" type="text" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input name="@@@@@ password @@@@@" id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="password" required="">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                                </div>
+                                <!-- <div class="form-group text-center">
+                                    <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small>
+                                </div> -->
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-secondary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        LOGIN
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right mt-0">
+                        <li class="px-1 py-2">
+                            <!-- 로그인 폼 -->
+                            <form action="@@@@@@@@@@ 폼 보낼 위치 @@@@@@@@@@" method="POST" class="form" role="form">
+                                <div class="form-group">
+                                    <input name="@@@@@ id @@@@@" placeholder="ID" class="form-control form-control-sm" type="text" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input name="@@@@@ password @@@@@" id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="password" required="">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                                </div>
+                                <!-- <div class="form-group text-center">
+                                    <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small>
+                                </div> -->
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    
+    <!-- header - end -->
+<<<<<<< HEAD
+    <div class="col-md-8 bg-dark ml-5 text-secondary p-5 pt-7">
+=======
+    <div class="col-md-8 bg-white ml-5 p-5 pt-7 float-left">
+
+        <h1 class="mb-5">방학기간 연장 시위</h1>
+        <i class="col-md-3 ticket text-right small">
+            2018-8-18<br>
+            아무개
+        </i>
+        <h3 class="text-shadow mb-5">폭염으로 인한 방학기간 연장을 주장합니다</h3>
+
+        
+
+        <h5>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis suscipit nostrum doloribus laborum numquam, accusamus dolorem ut veritatis vel repellendus velit quaerat! Culpa non eius rerum quibusdam ducimus architecto error.<br><br>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque veniam reiciendis nobis harum rem rerum officiis ipsa optio alias eligendi ad, cupiditate voluptatibus accusamus minima fugit molestias quo eos dicta dolorem sint ea, esse sequi, earum repellat. Iste temporibus et itaque, provident sint eveniet. Tempora illo tempore quo ea repudiandae temporibus nihil itaque similique, iste porro ex quod soluta debitis aut unde, velit ullam voluptatem expedita, ad amet id nisi? Eius explicabo beatae alias eveniet sit ipsa sunt labore magni quia minus similique at voluptatibus iure quidem consequatur architecto, laboriosam inventore, sapiente aut id, recusandae iste dignissimos. Impedit, rerum ipsam.<br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. At quos rem laborum, tempora vel facere quas dolorum aut dolor sequi officiis blanditiis modi accusantium dolore. Qui ex hic assumenda beatae necessitatibus voluptatum alias, repudiandae reprehenderit vel molestiae quos minus. Officiis expedita enim distinctio voluptatibus praesentium harum consequatur consequuntur, quos commodi?<br>
+            <br>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non qui, perspiciatis quod voluptatibus fugit quas ipsam deleniti deserunt nostrum commodi. Repellendus debitis, veritatis pariatur nesciunt aliquid maiores libero laborum sequi error iste, doloremque amet voluptas deserunt! Soluta in quidem temporibus. Similique non, velit assumenda illo minus, quis sit quod consectetur aliquam earum temporibus cumque vitae iusto delectus reiciendis dolore praesentium aut quas facilis laborum error unde doloribus incidunt quia! Aperiam itaque quidem nihil totam praesentium.<br><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cum molestias assumenda porro modi illum voluptates, perferendis ullam minus nisi iure similique officiis odio laudantium nihil consectetur. Vel culpa molestiae temporibus magnam debitis quod molestias laborum reprehenderit, commodi dolor sit nobis recusandae tempore ullam minus quidem iste itaque laudantium accusantium maxime quos soluta ut distinctio labore? Repudiandae, cupiditate? Eaque et sunt repellat placeat voluptatum sapiente ea tenetur eos molestiae aspernatur inventore praesentium numquam, reiciendis exercitationem quae necessitatibus, eveniet sit vel excepturi cum magnam expedita. Nulla nobis consequuntur provident nihil quisquam tempore pariatur perspiciatis dolorem numquam non! Facere ut maiores perspiciatis. Corporis ratione exercitationem minima? Voluptate deleniti voluptatem est qui dolore sunt recusandae animi perferendis delectus. Illum molestias eum error doloribus sit! Ea, at illum voluptatibus placeat eveniet officiis, nostrum autem, cum ipsam delectus quis reprehenderit repellendus laboriosam veritatis. Dignissimos, atque quam. Consectetur quidem tenetur accusantium, quos adipisci sint dolorum iure.<br><br>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio nisi provident optio a quae odio aliquam veniam laudantium aspernatur quaerat enim consequatur, perferendis consequuntur nihil!
+        </h5>
+>>>>>>> dev
+        
+        <div class="col-md-auto">
+            <canvas id="myChart" ></canvas>
+        </div>
+    </div>
+
+<<<<<<< HEAD
+    <div class="p-5 col-md-3 bg-white mt-6 menu-r b-radius">
+        <h3>목표 금액</h3>
+        <h4 class="text-right">50,000,000원</h4>
+        <div class="dropdown-divider mt-4 mb-4"></div>
+        <h3>모인 금액</h3>
+        <h4 class="text-right mb-4">23,500,000원</h4>
+        <div class="progress">
+            <!-- <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%"><%= @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%</div> -->
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 47%">47%</div>
+        </div>
+        <span class="float-left small-2">모금된 금액</span><spna class="float-right small-2">목표 금액</spna>
+=======
+    <div class="col-md-3 mt-6 menu-r">
+        <div class="p-5 b-radius bg-white">
+            <h3>목표 금액</h3>
+            <h4 class="text-right">50,000,000원</h4>
+            <div class="dropdown-divider mt-4 mb-4"></div>
+            <h3>모인 금액</h3>
+            <h4 class="text-right mb-4">23,500,000원</h4>
+            <div class="progress">
+                <!-- <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%"><%= @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%</div> -->
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 47%">47%</div>
+            </div>
+            <span class="float-left small-2">모금된 금액</span><spna class="float-right small-2">목표 금액</spna>
+        </div>
+
+        <div class="mt-5 p-5 b-radius bg-white">
+            <h3>사용 목록 리스트</h3>
+            <!-- <% for (var i = 0; i < @@@@@ 글쓴이가 정한 돈 쓸 목록 리스트.length @@@@@; i++) { %> -->
+                <%= i %>. <%= @@@@@ 글쓴이가 정한 돈 쓸 목록 리스트[i] %><br>
+                <div class="dropdown-divider mt-4 mb-4"></div>
+            <!-- <% } %> -->
+            
+            <div class="progress">
+                <!-- <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%"><%= @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%</div> -->
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 22%">22%</div>
+            </div>
+            <span class="float-left small-2">승인된 금액</span><spna class="float-right small-2">결제 금액</spna><br>
+
+            <form action=" @@@@@@@@@@ 위치 @@@@@@@@@@ " method="POST" class="text-right">
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" placeholder="승인에 사용 할 금액">
+                    <div class="input-group-append">
+                        <span class="input-group-text">원</span>
+                    </div>
+                </div>
+                <!-- <input name="admission" type="number"> -->
+                <input type="submit" class="btn btn-primary btn-attention" value="제출 승인">
+            </form>
+        </div>
+>>>>>>> dev
+    </div>
+
+</body>
+</html>
