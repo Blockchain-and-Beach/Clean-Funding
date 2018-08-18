@@ -25,6 +25,11 @@ router.get('/', (req, res) => {
             res.redirect('/post');
         } else
             res.send('Already exist title');
+    })
+    .put('/:title/like',(req,res)=>{
+        Post.update({title:req.title},{$inc:{like:1}})
+            .then(res.send('success'))
+            .catch(err=>console.error(err));
     });
 
 module.exports = router;

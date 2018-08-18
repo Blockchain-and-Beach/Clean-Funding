@@ -1,8 +1,7 @@
 const router = require('express').Router;
 
-const charge = require('../lib/charge');
+const charge = require('../dist/charge');
 const User = require('../models/userModel').userModel;
-
 
 router.get('/',(req,res)=>{
     res.render('charge');
@@ -15,4 +14,5 @@ router.get('/',(req,res)=>{
             .then(()=>res.send('Success Charge'))
             .catch(err=>console.error(err));
     });
+
 module.exports = router;
