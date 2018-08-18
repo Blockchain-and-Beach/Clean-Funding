@@ -5,17 +5,13 @@ import {
     RegisterNamespaceTransaction
 } from 'nem2-sdk';
 
-//계정에 rootnamespace:src를 할당하는 함수(※※※모자이크를 만들고 master 계정에 할당하는 함수)
-function mosaic_supply(): void {
+//네임스페이스에 모자이크 생성
+function mosaic_supply(NsName: string, MosaicName: string): void {
     const transactionHttp = new TransactionHttp('http://localhost:3000');
 
     //할당 받는 계정의 private 키, 나중에는 마스터 계정의 Address가 위치해야 함
-    const privateKey = 'F8198655A67278F77524880A1AB592922C12012F9ACA11D146147B231DE961DA';
+    const privateKey = process.env.ADMIN_KEY;
     const account = Account.createFromPrivateKey(privateKey, NetworkType.MIJIN_TEST);
-
-    // Replace with namespace name and mosaic name
-    const namespaceName = 'rootnamespace';
-    const mosaicName = 'srcc';
     
     //모자이크 정의 트랜잭션
     /*
@@ -26,8 +22,8 @@ function mosaic_supply(): void {
     //rootnamespace:src 모자이크는 supplymutable 하고 transferable 함
     const mosaicDefinitionTransaction = MosaicDefinitionTransaction.create(
     Deadline.create(),
-    mosaicName,
-    namespaceName,
+    MosaicName,
+    NsName,
     MosaicProperties.create({
         supplyMutable: true,
         transferable: true,
