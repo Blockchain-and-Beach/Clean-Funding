@@ -49,4 +49,6 @@ function RegisterSubNamespace(rootNsName: string, nsName: string,successHandle,f
         .subscribe(suc => successHandle(suc), err => failHandle(err));    
 }
 
+RegisterRootNamespace("ggg", console.log);
+
 export {RegisterRootNamespace,RegisterSubNamespace};
