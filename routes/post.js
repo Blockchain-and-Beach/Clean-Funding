@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
         .catch(err => console.error(err));
 })
     .get('/upload', (req, res) => {
-        res.render('upload')
+        res.render('upload');
     })
     .get('/:title', (req, res) => {
         const title = req.params.title;

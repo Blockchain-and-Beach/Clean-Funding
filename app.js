@@ -6,7 +6,7 @@ const logger = require('morgan');
 const helmet = require('helmet');
 const compression = require('compression');
 const session = require('express-session');
-const db = require('./lib/db');
+const db = require('./dist/db');
 
 const app = express();
 
@@ -24,7 +24,7 @@ app.use(session({
     secret: 'Clean-Funding Project',
     resave: false,
     saveUninitialized: true,
-    cookie: {secure: true},
+    cookie: {secure: true}
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 

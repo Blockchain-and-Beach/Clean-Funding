@@ -34,7 +34,7 @@ router.get('/', res => {
                 res.redirect('/');
             }
             else res.send('login failed');
-        })
+        });
     });
 
 module.exports = router;
