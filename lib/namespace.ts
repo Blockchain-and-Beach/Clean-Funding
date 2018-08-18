@@ -10,14 +10,14 @@ function defaultErrorHandle(err: any) : void{
 function RegisterRootNamespace(nsName,successHandle, failHandle=defaultErrorHandle) {
     const transactionHttp = new TransactionHttp(process.env.HOST);
     const privateKey = process.env.ADMIN_KEY as string;
-    const account = Account.createFromPrivateKey(privateKey,NetworkType.TEST_NET);
-    const namespaceName = "foo";
+    const account = Account.createFromPrivateKey(privateKey,NetworkType.MIJIN_TEST);
+    const namespaceName = nsName;
 
     const registerNamespaceTransaction = RegisterNamespaceTransaction.createRootNamespace(
         Deadline.create(),
         namespaceName,
         UInt64.fromUint(1000),
-        NetworkType.TEST_NET
+        NetworkType.MIJIN_TEST
     );
 
     const signedTransaction = account.sign(registerNamespaceTransaction);
@@ -33,13 +33,13 @@ function RegisterSubNamespace(rootNsName: string, nsName: string,successHandle,f
     const transactionHttp = new TransactionHttp(process.env.HOST);
 
     const privateKey = process.env.ADMIN_KEY;
-    const account = Account.createFromPrivateKey(privateKey,NetworkType.TEST_NET);
+    const account = Account.createFromPrivateKey(privateKey,NetworkType.MIJIN_TEST);
 
     const registerNamespaceTransaction = RegisterNamespaceTransaction.createSubNamespace(
         Deadline.create(),
         nsName,
         rootNsName,
-        NetworkType.TEST_NET
+        NetworkType.MIJIN_TEST
     );
 
     const signedTransaction = account.sign(registerNamespaceTransaction);
