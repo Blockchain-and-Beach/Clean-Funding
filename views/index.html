@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!-- 밑으로 -->
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -65,7 +65,7 @@
                     </a>
                     <a class="dropdown-item" href="#">마이페이지</a>
                     <a class="dropdown-item" href="#">
-                        나의 월렛<br>
+                        나의 잔고<br>
                         <div class="text-right"><%= money %>원</div>
                     </a>
                     <div class="dropdown-divider"></div>
@@ -291,7 +291,26 @@
                 <span class="float-left small-2">모금된 금액</span>
                 <span class="float-right small-2">목표 금액</span>
             </div>
-            <a class="card-body display-block">
+
+<!-- 
+오케이도케이
+몇번째인지가 곧 id 야
+너 잘 해놨는데
+
+
+
+
+
+
+
+
+나 여기 씀
+여기 a태그에서 다음 페이지로 넘어갈 때 '해당 값'을 받아오고싶음
+해당 값 = 몇번째 배열의 게시글인지 ㅈㅁ 대화좀
+postModel.js로 와주라
+
+ -->
+            <a href="<%= post.title %>" class="card-body display-block">
                 <h5 class="card-title"><%= @@@@@ 제목 @@@@@ %></h5>
                 <h6 class="card-subtitle mb-2 text-muted text-shadow"><%= @@@@@ 부제목 @@@@@ %></h6>
                 <p class="card-text"><%= @@@@@ 요약한 내용 @@@@@ %></p>

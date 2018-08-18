@@ -31,6 +31,12 @@
     <link rel="stylesheet" href="../public/stylesheets/main.css">
     <!-- <link rel="stylesheet" href="/stylesheets/main.css"> -->
 
+    <!-- ejs -->
+    <script type="text/javascript">
+        var title = "<%= post.title %>";
+        var totarPrice = "<%= requestPaymentLists.totarPrice %>";
+    </script>
+
     <!-- JS -->
     <script src="../public/scripts/main.js"></script>
     <!-- <script src="/scripts/main.js"></script> -->
@@ -58,7 +64,7 @@
                         </a>
                         <a class="dropdown-item" href="#">마이페이지</a>
                         <a class="dropdown-item" href="#">
-                            나의 월렛<br>
+                            나의 잔고<br>
                             <div class="text-right"><%= money %>원</div>
                         </a>
                         <div class="dropdown-divider"></div>
@@ -168,10 +174,10 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cum molestias assumenda porro modi illum voluptates, perferendis ullam minus nisi iure similique officiis odio laudantium nihil consectetur. Vel culpa molestiae temporibus magnam debitis quod molestias laborum reprehenderit, commodi dolor sit nobis recusandae tempore ullam minus quidem iste itaque laudantium accusantium maxime quos soluta ut distinctio labore? Repudiandae, cupiditate? Eaque et sunt repellat placeat voluptatum sapiente ea tenetur eos molestiae aspernatur inventore praesentium numquam, reiciendis exercitationem quae necessitatibus, eveniet sit vel excepturi cum magnam expedita. Nulla nobis consequuntur provident nihil quisquam tempore pariatur perspiciatis dolorem numquam non! Facere ut maiores perspiciatis. Corporis ratione exercitationem minima? Voluptate deleniti voluptatem est qui dolore sunt recusandae animi perferendis delectus. Illum molestias eum error doloribus sit! Ea, at illum voluptatibus placeat eveniet officiis, nostrum autem, cum ipsam delectus quis reprehenderit repellendus laboriosam veritatis. Dignissimos, atque quam. Consectetur quidem tenetur accusantium, quos adipisci sint dolorum iure.<br><br>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio nisi provident optio a quae odio aliquam veniam laudantium aspernatur quaerat enim consequatur, perferendis consequuntur nihil!
         </h5>
-        
+<!--         
         <div class="col-md-auto">
             <canvas id="myChart" ></canvas>
-        </div>
+        </div> -->
     </div>
 
     <div class="col-md-3 mt-6 menu-r">
@@ -186,30 +192,48 @@
                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 47%">47%</div>
             </div>
             <span class="float-left small-2">모금된 금액</span><spna class="float-right small-2">목표 금액</spna>
+            <br>
+            <div class="dropdown-divider mt-4 mb-4"></div>
+            <form action=" @@@@@@@@@@ 위치 @@@@@@@@@@ " method="POST" class="text-right">
+                <div class="input-group mb-3">
+                    <input name="@@@@@@ support @@@@@" type="number" class="form-control" placeholder="후원할 금액">
+                    <div class="input-group-append">
+                        <span class="input-group-text">원</span>
+                    </div>
+                </div>
+                <input name="@@@@@ 후원하기 @@@@@" type="button" class="btn btn-primary btn-attention m-0" value="후원하기">
+            </form>
         </div>
 
         <div class="mt-5 p-5 b-radius bg-white">
             <h3>사용 목록 리스트</h3>
             <!-- <% for (var i = 0; i < @@@@@ 글쓴이가 정한 돈 쓸 목록 리스트.length @@@@@; i++) { %> -->
-                <%= i %>. <%= @@@@@ 글쓴이가 정한 돈 쓸 목록 리스트[i] %><br>
-                <div class="dropdown-divider mt-4 mb-4"></div>
+                <%= i %>. <%= @@@@@ 글쓴이가 정한 돈 쓸 목록 리스트[i] %><br><br>
             <!-- <% } %> -->
+
+            <div class="dropdown-divider mt-4 mb-4"></div>
+            <h3>결제 금액</h3>
+            <h4 class="text-right">1234135원</h4>
+            <div class="dropdown-divider mt-4 mb-4"></div>
+            <h3>승인된 금액</h3>
+            <h4 class="text-right mb-4">1234원</h4>
+            
             
             <div class="progress">
-                <!-- <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%"><%= @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%</div> -->
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 22%">22%</div>
+                <!-- <div id="approved-amount" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%"><%= @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%</div> -->
+                <div id="approved-amount" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 22%">22%</div>
             </div>
             <span class="float-left small-2">승인된 금액</span><spna class="float-right small-2">결제 금액</spna><br>
+            <div class="dropdown-divider mt-4 mb-4"></div>
 
             <form action=" @@@@@@@@@@ 위치 @@@@@@@@@@ " method="POST" class="text-right">
                 <div class="input-group mb-3">
-                    <input type="number" class="form-control" placeholder="승인에 사용 할 금액">
+                    <input name="@@@@@ admission @@@@@" type="number" class="form-control" placeholder="승인에 사용 할 금액">
                     <div class="input-group-append">
                         <span class="input-group-text">원</span>
                     </div>
                 </div>
-                <!-- <input name="admission" type="number"> -->
-                <input type="submit" class="btn btn-primary btn-attention" value="제출 승인">
+                <input type="submit" class="btn btn-primary btn-attention m-0" value="제출 승인">
             </form>
         </div>
     </div>
