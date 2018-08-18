@@ -1,17 +1,20 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "es6",
-        "lib": [
-            "es5", "es6", "dom"
-        ],
-        "sourceMap": true,
-        "noStrictGenericChecks": true
-    },
-    "include": [
-        "lib/*.ts"
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "lib": [
+      "es5",
+      "es6",
+      "dom"
     ],
-    "exclude": [
-        "node_modules"
-    ]
+    "sourceMap": true,
+    "noStrictGenericChecks": true,
+    "outDir": "dist"
+  },
+  "include": [
+    "lib/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
