@@ -42,6 +42,7 @@ app.use('/signUp',signUp);
 app.use('/payment',payment);
 app.use('/charge',charge);
 
+
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
     next(createError(404));

@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
     Post.find({})
         .sort({Date: -1})
         .exec(results => {
-            res.render('posts', {posts: results});
+            res.render('index', {posts: results});
         })
         .catch(err => console.error(err));
 })
@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
         if (!findByTitle(req.body.title)) {
             const post = new Post(req.body);
             post.save();
-            res.redirect('/post');
+            res.redirect('/'+req.body.title);
         } else
             res.send('Already exist title');
     })
@@ -30,6 +30,9 @@ router.get('/', (req, res) => {
         Post.update({title:req.title},{$inc:{like:1}})
             .then(res.send('success'))
             .catch(err=>console.error(err));
-    });
+    }).get('/:title/approvedAmount',(req,res)=>{
+        const approvedAmount={};
+        res.send(approvedAmount);
+});
 
 module.exports = router;
