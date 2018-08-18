@@ -18,12 +18,14 @@ function donate(donaterPrivateKey: string, groupPrivateKey: string, nsName:strin
     //후원
     const donatorAccount = Account.createFromPrivateKey(donaterPrivateKey,NetworkType.MIJIN_TEST);
     const groupAccount = Account.createFromPrivateKey(groupPrivateKey,NetworkType.MIJIN_TEST);
-
-    sendMoney('cfc', 'fuck', donaterPrivateKey, groupAccount.publicKey, coinNum, message);
+    //루트 네임스페이스, 루트 모자이크
+    sendMoney('bob', 'won', donaterPrivateKey, groupAccount.publicKey, coinNum, message);
     sendMoney(nsName,mosaicName,groupPrivateKey, donatorAccount.publicKey, coinNum, message);
 }
 console.log(process.env.donater);
 console.log(process.env.group);
-donate(process.env.donater, process.env.group, 'alice', 'fuck', 100);
+
+//프로젝트의 네임스페이스, 모자이크
+donate(process.env.donater, process.env.group, 'bob', 'token', 10);
 
 export {donate}
