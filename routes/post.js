@@ -33,6 +33,9 @@ router.get('/', (req, res) => {
     }).get('/:title/approvedAmount',(req,res)=>{
         const approvedAmount={};
         res.send(approvedAmount);
-});
+    }).get('/:title/sumAmount',(req,res)=>{
+        const sumAmount={};
+        res.send(sumAmount);
+    });
 
 module.exports = router;
