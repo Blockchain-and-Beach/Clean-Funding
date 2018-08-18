@@ -6,11 +6,11 @@ import {
 } from 'nem2-sdk';
 
 //네임스페이스에 모자이크 생성
-function mosaic_supply(NsName: string, MosaicName: string): void {
-    const transactionHttp = new TransactionHttp('http://ec2-13-209-47-31.ap-northeast-2.compute.amazonaws.com:3000');
+function mosaic_generator(NsName: string, MosaicName: string): void {
+    const transactionHttp = new TransactionHttp('http://localhost:3000');
 
     //할당 받는 계정의 private 키, 나중에는 마스터 계정의 Address가 위치해야 함
-    const privateKey = process.env.ADMIN_KEY;
+    const privateKey = 'F8198655A67278F77524880A1AB592922C12012F9ACA11D146147B231DE961DA';
     const account = Account.createFromPrivateKey(privateKey, NetworkType.MIJIN_TEST);
     
     //모자이크 정의 트랜잭션
@@ -57,4 +57,6 @@ function mosaic_supply(NsName: string, MosaicName: string): void {
         .subscribe(x=> console.log(x),err => console.error(err));
 }
 
-export {mosaic_supply};
+
+mosaic_generator('foo', 'fuck');
+export {mosaic_generator};
