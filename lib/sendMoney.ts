@@ -14,8 +14,8 @@ import {
 
  } from 'nem2-sdk';
 
- function sendMoney(nsName:string, mosaicName:string, senderPrivateKey:string, receiverPublicKey:string, coinNum:number, message?:string)
- {
+function sendMoney(nsName:string, mosaicName:string, senderPrivateKey:string, receiverPublicKey:string, coinNum:number, message?:string)
+{
     const recipientAddress = Address.createFromPublicKey(receiverPublicKey, NetworkType.MIJIN_TEST);
 
     const transferTransaction = TransferTransaction.create(
@@ -32,4 +32,6 @@ import {
     transactionHttp.announce(signedTransaction).subscribe(
         x => console.log(x), err => console.log(err)
     );
- }
+}
+
+export  {sendMoney};

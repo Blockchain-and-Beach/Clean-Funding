@@ -13,7 +13,7 @@ function transfer(MONEY: number, ADDRESS: string): void {
         Deadline.create(),
         recipientAddress,
         //루트 네임스페이스: 루트 모자이크
-        [new Mosaic(new MosaicId('rootnamespace:src'), UInt64.fromUint(MONEY))],
+        [new Mosaic(new MosaicId('cf:src'), UInt64.fromUint(MONEY))],
         PlainMessage.create("Welcome To NEM"),
         NetworkType.MIJIN_TEST);
 
