@@ -4,7 +4,10 @@
   "description": "Make Clean World!",
   "main": "app.js",
   "scripts": {
-    "test": "node ./bin/www.js"
+    "test": "tsc; node ./bin/www.js",
+    "build": "tsc",
+    "clean": "rm -rf ./dist",
+    "lint": "node_modules/.bin/eslint"
   },
   "repository": {
     "type": "git",
@@ -30,9 +33,22 @@
     "express-session": "^1.15.6",
     "helmet": "^3.13.0",
     "http-errors": "^1.7.0",
+    "mongoose": "^5.2.8",
     "morgan": "^1.9.0",
     "nem2-sdk": "^0.10.1",
-    "rxjs": "^6.2.2",
-    "mongoose": "^5.2.8"
+    "request": "^2.88.0",
+    "rxjs": "^6.2.2"
+<<<<<<< HEAD
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.4",
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.1.2",
+    "eslint": "^5.3.0",
+    "eslint-config-keystone": "^3.0.0",
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.1"
+=======
+>>>>>>> jodnddus
   }
 }
