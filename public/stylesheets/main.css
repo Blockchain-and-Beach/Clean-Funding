@@ -82,3 +82,6 @@ nav {
 .display-inline-block {
     display: inline-block;
 }
+.cursor-pointe {
+    cursor: pointe!important;
+}
