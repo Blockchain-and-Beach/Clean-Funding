@@ -7,7 +7,7 @@ import {
 
 //네임스페이스에 모자이크 생성
 function mosaic_supply(NsName: string, MosaicName: string): void {
-    const transactionHttp = new TransactionHttp('http://localhost:3000');
+    const transactionHttp = new TransactionHttp('http://ec2-13-209-47-31.ap-northeast-2.compute.amazonaws.com:3000');
 
     //할당 받는 계정의 private 키, 나중에는 마스터 계정의 Address가 위치해야 함
     const privateKey = process.env.ADMIN_KEY;
