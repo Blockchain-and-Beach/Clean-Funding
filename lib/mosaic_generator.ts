@@ -60,3 +60,5 @@ function mosaic_supply(): void {
         .announce(signedTransaction)
         .subscribe(x=> console.log(x),err => console.error(err));
 }
+
+export {mosaic_supply};

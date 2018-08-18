@@ -35,3 +35,5 @@ function namespace_generator(): void {
 
     transactionHttp.announce(signedTransaction).subscribe(x => console.log(x), err => console.error(err));
 }
+
+export {namespace_generator};

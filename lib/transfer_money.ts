@@ -23,3 +23,5 @@ function transfer(MONEY: number, ADDRESS: string): void {
     const transactionHttp = new TransactionHttp('http://localhost:3000');
     transactionHttp.announce(signedTransaction).subscribe(x => console.log(x), err => console.error(err));
 }
+
+export {transfer};

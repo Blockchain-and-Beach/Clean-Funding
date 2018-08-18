@@ -27,3 +27,4 @@ function charge(address: string, money: number) : void {         //address: 이 
         err => console.log(err)
     );
 }
+
