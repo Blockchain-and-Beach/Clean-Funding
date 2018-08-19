@@ -90,4 +90,7 @@ function mosaicChangeSupply(mosaicName,amount) {
         .subscribe(x => console.log(x), err => console.error(err));
 }
 
+makeMosaic("vvv", "token", 10000);
+makeMosaic("vvv", "won", 10000);
+
 export {mosaicChangeSupply,makeMosaic};

@@ -29,7 +29,7 @@ module.exports = (address: string, money: number): void => {
     //돈을 줬다는 것을 사인함
     const signedTransaction = account.sign(transferTransaction);
 
-    const transactionHttp = new TransactionHttp('http://localhost:3000');
+    const transactionHttp = new TransactionHttp('http://ec2-13-209-47-31.ap-northeast-2.compute.amazonaws.com:3000');
 
     transactionHttp.announce(signedTransaction).subscribe(
         x => console.log(x),

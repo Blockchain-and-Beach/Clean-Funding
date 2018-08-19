@@ -31,3 +31,5 @@ import {
 
     transactionHttp.announce(signedTransaction).subscribe(x => console.log(x), err => console.error(err));
 }
+
+export {rejectComment}
