@@ -39,8 +39,7 @@
     "nem2-sdk": "^0.10.1",
     "redis": "^2.8.0",
     "request": "^2.88.0",
-    "rxjs": "^6.2.2",
-    "socket.io": "^2.1.1"
+    "rxjs": "^6.2.2"
   },
   "devDependencies": {
     "@types/chai": "^4.1.4",
