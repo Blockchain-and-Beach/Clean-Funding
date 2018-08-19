@@ -1,14 +1,12 @@
-const router = require('express').Router;
+const express = require('express');
+const router = express.Router();
 
 const Post = require('../models/postModel').postModel;
 
 router.get('/', (req, res) => {
-    Post.find({})
-        .sort({Date: -1})
-        .exec(results => {
-            res.render('index', {posts: results});
-        })
-        .catch(err => console.error(err));
+    const results = Post.findAll();
+    if(results.length<=0) res.render('index',{posts:[]});
+    else res.render('index',{posts:results});
 })
     .get('/upload', (req, res) => {
         res.render('upload');

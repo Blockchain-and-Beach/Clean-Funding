@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
-const postSchema = require('./postModel').postSchema;
+const Post = require('./postModel').postModel;
 
 const organizationSchema = new mongoose.Schema({
     ID: {type: String, required: true, unique: true},
     PW: {type: String, required: true},
     name: {type: String, required: true, unique: true, index: true},
     address: {type: String, required: true, unique: true},
-    posts: [{type: postSchema}]
+    posts: [{type: mongoose.Schema.Types.ObjectId, ref:'Post'}]
 });
 
 organizationSchema.statics.findByID = async ID => {
@@ -29,4 +29,4 @@ organizationSchema.methods.comparePW = (PW, callback) => {
 };
 
 exports.organizationSchema = organizationSchema;
-exports.organizationModel = mongoose.Model('Organization', organizationSchema);
+exports.organizationModel = mongoose.model('Organization', organizationSchema);

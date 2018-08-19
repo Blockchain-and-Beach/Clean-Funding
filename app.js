@@ -8,11 +8,11 @@ const compression = require('compression');
 const session = require('express-session');
 const db = require('./dist/db');
 
-const charge = require('./routes/charge');
 const login  = require('./routes/login');
-const payment = require('./routes/payment');
+const charge = require('./routes/charge');
 const post = require('./routes/post');
 const signUp = require('./routes/signUp');
+const payment = require('./routes/payment');
 
 const app = express();
 
@@ -41,7 +41,6 @@ app.use('/login',login);
 app.use('/signUp',signUp);
 app.use('/payment',payment);
 app.use('/charge',charge);
-
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

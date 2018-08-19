@@ -1,4 +1,5 @@
-const router = require('express').Router;
+const express = require('express');
+const router = express.Router();
 
 const User = require('../models/userModel').userModel;
 const Organization = require('../models/organizationModel').organizationModel;
@@ -27,7 +28,7 @@ router.post('/user', (req, res) => {
                 res.redirect('/');
             }
             else res.send('login failed');
-        })
+        });
     });
 
 module.exports = router;

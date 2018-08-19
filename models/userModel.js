@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
     PW: {type: String, required: true},
     nickname: {type: String, required: true, unique: true, index: true},
     address: {type: String, required: true, unique: true},
-    sponsoredPost: {type: [mongoose.Schema.Types.ObjectId], ref: 'Post', default: []},
+    sponsoredPost: [{type: mongoose.Schema.Types.ObjectId, ref: 'Post'}],
     balance: {type: Number, default: 0}
 });
 userSchema.statics.findByID = async ID => {
@@ -31,4 +31,4 @@ userSchema.methods.comparePW = (PW, callback) => {
 
 
 exports.userSchema = userSchema;
-exports.userModel = mongoose.Model('User', userSchema);
+exports.userModel = mongoose.model('User', userSchema);

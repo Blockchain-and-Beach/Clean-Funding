@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
 
 const Organization = require('./organizationModel').organizationModel;
-const userSchema = require('userModel').userSchema;
-const User = require('userModel').userModel;
+const User = require('./userModel').userModel;
 
 const commentSchema = new mongoose.Schema({
-    author: {type: userSchema, required: true},
+    author: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true},
     content: {type: String, required: true}
 });
 const paymentSchema = new mongoose.Schema({
@@ -17,7 +16,7 @@ const paymentSchema = new mongoose.Schema({
 
 const paymentListSchema = new mongoose.Schema({
     payments: {type: [paymentSchema]},
-    totalPrice: {type: Number, default: calcTotalPrice},
+    totalPrice: {type: Number},
     requestDate: {type: Date, default: Date.now, required: true}
 });
 
@@ -42,13 +41,9 @@ postSchema.statics.findByTitle = async title => {
         console.error(err);
     }
 };
-paymentListSchema.methods.calcTotalPrice = () => {
-    let totalPrice = 0;
-    this.payments.forEach(element => {
-        totalPrice += element.price;
-    });
-    return totalPrice;
+postSchema.statics.findAll = async ()=>{
+    return await find({}).sort({Date:-1});
 };
 
 exports.postSchema = postSchema;
-exports.postModel = mongoose.Model('Post', postSchema);
+exports.postModel = mongoose.model('Post', postSchema);
