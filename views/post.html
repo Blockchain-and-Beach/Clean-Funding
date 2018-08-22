@@ -31,6 +31,12 @@
     <link rel="stylesheet" href="../public/stylesheets/main.css">
     <!-- <link rel="stylesheet" href="/stylesheets/main.css"> -->
 
+    <!-- ejs -->
+    <script type="text/javascript">
+        var title = "<%= post.title %>";
+        var totarPrice = "<%= requestPaymentLists.totarPrice %>";
+    </script>
+
     <!-- JS -->
     <script src="../public/scripts/main.js"></script>
     <!-- <script src="/scripts/main.js"></script> -->
@@ -58,7 +64,7 @@
                         </a>
                         <a class="dropdown-item" href="#">마이페이지</a>
                         <a class="dropdown-item" href="#">
-                            나의 월렛<br>
+                            나의 잔고<br>
                             <div class="text-right"><%= money %>원</div>
                         </a>
                         <div class="dropdown-divider"></div>
@@ -73,7 +79,7 @@
                 </li>
             </ul>
 
-            
+
             <!-- <ul class="navbar-nav">
                 <a class="text-center" href="#">
                     <img class="m-auto" src="../public/images/logo/logo-3-64.svg">
@@ -146,7 +152,7 @@
         </div>
     </nav>
 
-    
+
     <!-- header - end -->
     <div class="col-md-8 bg-white ml-5 p-5 pt-7 float-left">
 
@@ -157,59 +163,83 @@
         </i>
         <h3 class="text-shadow mb-5">폭염으로 인한 방학기간 연장을 주장합니다</h3>
 
-        
-
         <h5>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis suscipit nostrum doloribus laborum numquam, accusamus dolorem ut veritatis vel repellendus velit quaerat! Culpa non eius rerum quibusdam ducimus architecto error.<br><br>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque veniam reiciendis nobis harum rem rerum officiis ipsa optio alias eligendi ad, cupiditate voluptatibus accusamus minima fugit molestias quo eos dicta dolorem sint ea, esse sequi, earum repellat. Iste temporibus et itaque, provident sint eveniet. Tempora illo tempore quo ea repudiandae temporibus nihil itaque similique, iste porro ex quod soluta debitis aut unde, velit ullam voluptatem expedita, ad amet id nisi? Eius explicabo beatae alias eveniet sit ipsa sunt labore magni quia minus similique at voluptatibus iure quidem consequatur architecto, laboriosam inventore, sapiente aut id, recusandae iste dignissimos. Impedit, rerum ipsam.<br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. At quos rem laborum, tempora vel facere quas dolorum aut dolor sequi officiis blanditiis modi accusantium dolore. Qui ex hic assumenda beatae necessitatibus voluptatum alias, repudiandae reprehenderit vel molestiae quos minus. Officiis expedita enim distinctio voluptatibus praesentium harum consequatur consequuntur, quos commodi?<br>
-            <br>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non qui, perspiciatis quod voluptatibus fugit quas ipsam deleniti deserunt nostrum commodi. Repellendus debitis, veritatis pariatur nesciunt aliquid maiores libero laborum sequi error iste, doloremque amet voluptas deserunt! Soluta in quidem temporibus. Similique non, velit assumenda illo minus, quis sit quod consectetur aliquam earum temporibus cumque vitae iusto delectus reiciendis dolore praesentium aut quas facilis laborum error unde doloribus incidunt quia! Aperiam itaque quidem nihil totam praesentium.<br><br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cum molestias assumenda porro modi illum voluptates, perferendis ullam minus nisi iure similique officiis odio laudantium nihil consectetur. Vel culpa molestiae temporibus magnam debitis quod molestias laborum reprehenderit, commodi dolor sit nobis recusandae tempore ullam minus quidem iste itaque laudantium accusantium maxime quos soluta ut distinctio labore? Repudiandae, cupiditate? Eaque et sunt repellat placeat voluptatum sapiente ea tenetur eos molestiae aspernatur inventore praesentium numquam, reiciendis exercitationem quae necessitatibus, eveniet sit vel excepturi cum magnam expedita. Nulla nobis consequuntur provident nihil quisquam tempore pariatur perspiciatis dolorem numquam non! Facere ut maiores perspiciatis. Corporis ratione exercitationem minima? Voluptate deleniti voluptatem est qui dolore sunt recusandae animi perferendis delectus. Illum molestias eum error doloribus sit! Ea, at illum voluptatibus placeat eveniet officiis, nostrum autem, cum ipsam delectus quis reprehenderit repellendus laboriosam veritatis. Dignissimos, atque quam. Consectetur quidem tenetur accusantium, quos adipisci sint dolorum iure.<br><br>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio nisi provident optio a quae odio aliquam veniam laudantium aspernatur quaerat enim consequatur, perferendis consequuntur nihil!
+          시위에 필요한 팜플렛, 깃발, 두건, 총기류, 간식 등을 구매하기위한 후원금을 모으고있습니다. 여러분들의 많은 관심 부탁드립니다. <br><br>
+
+
+올해 여름 한국에서 최고기온을 기록하고있다는 사실은 여러분들도 잘 알고계실겁니다. 서울은 39도 중부지방은 42도가량 올라가는 사실상 열대지방 기후만큼의 기온을 따라잡고 있는것이 사실입니다. 심지어 적도부군의 지역은 습도가 낮거나 매일매일 강한 소나기가 내리지만 한국은 전혀 그렇지 못한 실정입니다.<br><br>
+
+ 때문에 체감온도는 아프리카의 기후보다 더 높다고 통계되고있습니다. 이러한 대한민국에서 살인적인 날씨에 학생들은 먼 학교까지 등교하고 있습니다. 유럽의 많은 지역에서는 국가의 폭염 경보가 내려지면 학교 수업시간을 단축하거나 휴교하는 등의 유연한 대첵으로 호평받고있지만 한국의 많은 초중고등학교는 40도가 넘는 폭염속에서도 등교하고있습니다.<br><br>
+
+ 또한 이러한 문제점은 학생들의 공부 효율과 의욕을 떨어뜨리고 학생뿐만이 아니라 교사 역시 평균적으로 학생보다 더욱 많은 지역을 움직이면서 체력을 소모하여 교육의 질 역시 함께 하락하게 됩니다.<br><br>
+
+저희는 이러한 상황속에서 정부에서 강력한 휴교 요청을 요구하는 바 입니다. 이번 사회 운동은 광화문 광장에서 모이게 되며 여러분의 후원금을 통해 깃발, 팜플렛, 두건, 총기류, 간식 등의 물건을 구입하고 집합한 사람들에게 나누어주게 되며 여러분들의 많은 관심을 부탁드리겠습니다.<br><br>
+
+선발대에게는 간단한 깃발과 야광봉등을 지급하고 가장 앞에서 시민들에게 저희의 길을 알리는 역할을 맡게 됩니다. 그 뒤를 이어 중견대는 저희들이 선발한 건장한 대상들을 중심으로 팜플렛과 두건을 지급하고 줄을 맞춰 행진하며 저희의 단합력과 기합을 주변 사람들에게 뽐낼 것입니다. 이 두 선발대와 중견대는 시위 경로 중간중간에 일부 자원봉사자들의 도움을 통해 여러분들의 후원금으로 준비된 간식을 제공하게 됩니다.
+
+이후가 하이라이트인데 저희들이 지하에서 비밀리에 수련시켜온 특수부대들에게 총기와 함께 도시에서 총기난동!!!! 하하ㅏ하하하ㅏㅏ하하하하핳ㅎ하ㅏ하<br><br>
+
+이로써 저희는 저희가 요구하는 내용을 받아들여주지 않은 정부 혹은 교육청에 강한 의견을 전달할 예정입니다. 중간에 설득와 중제안에 대한 간섭에도 절대로 흔들리지 않고 의견을 전달할하겠습니다. 저희의 의견에 동의하지 않으시면 여러분들의 많은 후원을 부탁드리겠습니다. 그럼 저는 이만 여기서 말을 줄이도록하겠습니다.
         </h5>
-        
+<!--         
         <div class="col-md-auto">
             <canvas id="myChart" ></canvas>
-        </div>
+        </div> -->
     </div>
-
     <div class="col-md-3 mt-6 menu-r">
         <div class="p-5 b-radius bg-white">
             <h3>목표 금액</h3>
             <h4 class="text-right">50,000,000원</h4>
             <div class="dropdown-divider mt-4 mb-4"></div>
             <h3>모인 금액</h3>
-            <h4 class="text-right mb-4">23,500,000원</h4>
+            <h4 class="text-right mb-4">50,000,000원</h4>
             <div class="progress">
                 <!-- <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%"><%= @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%</div> -->
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 47%">47%</div>
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%">100%</div>
             </div>
-            <span class="float-left small-2">모금된 금액</span><span class="float-right small-2">목표 금액</span>
+            <span class="float-left small-2">모금된 금액</span><spna class="float-right small-2">목표 금액</spna>
+            <br>
+            <div class="dropdown-divider mt-4 mb-4"></div>
+            <form action=" @@@@@@@@@@ 위치 @@@@@@@@@@ " method="POST" class="text-right">
+                <div class="input-group mb-3">
+                    <input name="@@@@@@ support @@@@@" type="number" class="form-control" placeholder="후원할 금액">
+                    <div class="input-group-append">
+                        <span class="input-group-text">원</span>
+                    </div>
+                </div>
+                <input name="@@@@@ 후원하기 @@@@@" type="button" class="btn btn-primary btn-attention m-0" value="후원하기">
+            </form>
         </div>
 
         <div class="mt-5 p-5 b-radius bg-white">
             <h3>사용 목록 리스트</h3>
             <!-- <% for (var i = 0; i < @@@@@ 글쓴이가 정한 돈 쓸 목록 리스트.length @@@@@; i++) { %> -->
-                <%= i %>. <%= @@@@@ 글쓴이가 정한 돈 쓸 목록 리스트[i] %><br>
-                <div class="dropdown-divider mt-4 mb-4"></div>
+                <%= i %>. <%= @@@@@ 글쓴이가 정한 돈 쓸 목록 리스트[i] %><br><br>
             <!-- <% } %> -->
+
+            <div class="dropdown-divider mt-4 mb-4"></div>
+            <h3>결제 금액</h3>
+            <h4 class="text-right">1234135원</h4>
+            <div class="dropdown-divider mt-4 mb-4"></div>
+            <h3>승인된 금액</h3>
+            <h4 class="text-right mb-4">1234원</h4>
+            
             
             <div class="progress">
-                <!-- <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%"><%= @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%</div> -->
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 22%">22%</div>
+                <!-- <div id="approved-amount" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%"><%= @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%</div> -->
+                <div id="approved-amount" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 22%">22%</div>
             </div>
-            <span class="float-left small-2">승인된 금액</span><span class="float-right small-2">결제 금액</span><br>
+            <span class="float-left small-2">승인된 금액</span><spna class="float-right small-2">결제 금액</spna><br>
+            <div class="dropdown-divider mt-4 mb-4"></div>
 
             <form action=" @@@@@@@@@@ 위치 @@@@@@@@@@ " method="POST" class="text-right">
                 <div class="input-group mb-3">
-                    <input type="number" class="form-control" placeholder="승인에 사용 할 금액">
+                    <input name="@@@@@ admission @@@@@" type="number" class="form-control" placeholder="승인에 사용 할 금액">
                     <div class="input-group-append">
                         <span class="input-group-text">원</span>
                     </div>
                 </div>
-                <!-- <input name="admission" type="number"> -->
-                <input type="submit" class="btn btn-primary btn-attention" value="제출 승인">
+                <input type="submit" class="btn btn-primary btn-attention m-0" value="제출 승인">
             </form>
         </div>
     </div>
