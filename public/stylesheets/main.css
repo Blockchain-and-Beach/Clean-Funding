@@ -111,3 +111,12 @@
     background-color: rgba(0, 0, 0, 0.1);
     transition: 0.1s;
 }
+#h0 {
+   font-size: 500%; 
+}
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
