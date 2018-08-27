@@ -173,115 +173,34 @@
             </div>
         </div>
 
-        <div class="display-inline-block text-left">
-            <div class="card">
-                <div class="card-header">
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%</div>
-                    </div>
-                    <span class="float-left small-2">모금된 금액</span><spna class="float-right small-2">목표 금액</spna>
-                </div>
-                <a class="card-body display-block">
-                    <h5 class="card-title">Lorem, ipsum dolor.</h5>
-                    <h6 class="card-subtitle mb-2 text-muted text-shadow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolore libero laborum.</h6>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet recusandae similique optio, id dignissimos, at, quisquam placeat atque iure nisi tenetur? Laudantium.</p>
-                    <div class="text-right small text-color-soft"><i>아무개</i></div>
-                    <form action=" @@@@@@@@@@ 위치 @@@@@@@@@@ " method="GET" class="form-bottom">
-                        <button name="attention" type="button" class="btn btn-primary btn-attention">관심있어요!</button>
-                    </form>
-                </a>
-                <div class="card-footer text-muted">
-                    <span class="float-left">2018-8-17</span><span class="float-right"><img class="small-icon" src="../public/images/heart-solid.svg" alt="하트" title="관심"> 17 &nbsp; <img class="small-icon" src="../public/images/user-check-solid.svg" alt="사람-체크" title="참여자"> 5</span>
-                </div>
-            </div>
-        </div>
 
-        <div class="display-inline-block text-left">
-            <div class="card">
-                <div class="card-header">
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%</div>
+        <% for (var i = 0; i < 게시판.length; i++) { %>
+            <div class="display-inline-block text-left">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%"><%= @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%</div>
+                        </div>
+                        <span class="float-left small-2">모금된 금액</span><spna class="float-right small-2">목표 금액</spna>
                     </div>
-                    <span class="float-left small-2">모금된 금액</span><spna class="float-right small-2">목표 금액</spna>
-                </div>
-                <a class="card-body display-block">
-                    <h5 class="card-title">나도 이제 좀 자자!</h5>
-                    <h6 class="card-subtitle mb-2 text-muted text-shadow">밤새면서 개발했는데 젭라 인권 존중점여ㅠ.ㅠ</h6>
-                    <p class="card-text">얺이 진짜 ㄹㅇㄹㄷㄱ 엄청 졸리다고으어ㅓㅓ어ㅓㅓㅓ어ㅓㅓㅓ어ㅓㅓ어 바다가 보이는 창가쪽 침대에 누워 창문을 열면 싱그러운 바닷바람과 파돗소리에 파묻혀 잠들고싶어ㅠㅜㅜㅜㅠㅜㅠㅠㅠㅜㅠㅠㅜ</p>
-                    <div class="text-right small text-color-soft"><i>아무개</i></div>
-                    <form action=" @@@@@@@@@@ 위치 @@@@@@@@@@ " method="GET" class="form-bottom">
-                        <button name="attention" type="button" class="btn btn-primary btn-attention">관심있어요!</button>
-                    </form>
-                </a>
-                <div class="card-footer text-muted">
-                    <span class="float-left">2018-8-17</span><span class="float-right"><img class="small-icon" src="../public/images/heart-solid.svg" alt="하트" title="관심"> 17 &nbsp; <img class="small-icon" src="../public/images/user-check-solid.svg" alt="사람-체크" title="참여자"> 5</span>
+                    <a class="card-body display-block">
+                        <h5 class="card-title"><%= @@@@@ 제목 @@@@@ %></h5>
+                        <h6 class="card-subtitle mb-2 text-muted text-shadow"><%= @@@@@ 부제목 @@@@@ %></h6>
+                        <p class="card-text"><%= @@@@@ 요약한 내용 @@@@@ %></p>
+                        <div class="text-right small text-color-soft"><i><%= @@@@@ 작성자 @@@@@ %></i></div>
+                        <form action=" @@@@@@@@@@ 위치 @@@@@@@@@@ " method="GET" class="form-bottom">
+                            <button name="attention" type="button" class="btn btn-primary btn-attention">관심있어요!</button>
+                        </form>
+                    </a>
+                    <div class="card-footer text-muted">
+                        <span class="float-left">2018-8-17</span><span class="float-right"><img class="small-icon" src="../public/images/heart-solid.svg" alt="하트" title="관심"> <%= @@@@@ 관심자 수 @@@@@ %> &nbsp; <img class="small-icon" src="../public/images/user-check-solid.svg" alt="사람-체크" title="참여자"> <%= @@@@@ 참여자 수 @@@@@ %></span>
+                    </div>
                 </div>
             </div>
-        </div>
+        <% } %>
 
-        <div class="display-inline-block text-left">
-            <div class="card">
-                <div class="card-header">
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%</div>
-                    </div>
-                    <span class="float-left small-2">모금된 금액</span><spna class="float-right small-2">목표 금액</spna>
-                </div>
-                <a class="card-body display-block">
-                    <h5 class="card-title">Lorem ipsum dolor sit amet.</h5>
-                    <h6 class="card-subtitle mb-2 text-muted text-shadow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, molestiae.</h6>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, veritatis? Error doloribus quas esse nulla, molestias delectus dolores voluptatum repellendus ducimus eius, dolorum odio labore facilis quia facere dicta laborum veritatis sed pariatur architecto totam. Alias delectus odit consequatur hic.</p>
-                    <div class="text-right small text-color-soft"><i>아무개</i></div>
-                    <form action=" @@@@@@@@@@ 위치 @@@@@@@@@@ " method="GET" class="form-bottom">
-                        <button name="attention" type="button" class="btn btn-primary btn-attention">관심있어요!</button>
-                    </form>
-                </a>
-                <div class="card-footer text-muted">
-                    <span class="float-left">2018-8-17</span><span class="float-right"><img class="small-icon" src="../public/images/heart-solid.svg" alt="하트" title="관심"> 17 &nbsp; <img class="small-icon" src="../public/images/user-check-solid.svg" alt="사람-체크" title="참여자"> 5</span>
-                </div>
-            </div>
-        </div>
 
-        <div class="display-inline-block text-left">
-            <div class="card">
-                <div class="card-header">
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%"><%= @@@@@ 모인금액 @@@@@ * 100 / @@@@@ 목표금액 @@@@@ %>%</div>
-                    </div>
-                    <span class="float-left small-2">모금된 금액</span><spna class="float-right small-2">목표 금액</spna>
-                </div>
-                <a class="card-body display-block">
-                    <h5 class="card-title"><%= @@@@@ 제목 @@@@@ %></h5>
-                    <h6 class="card-subtitle mb-2 text-muted text-shadow"><%= @@@@@ 부제목 @@@@@ %></h6>
-                    <p class="card-text"><%= @@@@@ 요약한 내용 @@@@@ %></p>
-                    <div class="text-right small text-color-soft"><i><%= @@@@@ 작성자 @@@@@ %></i></div>
-                    <form action=" @@@@@@@@@@ 위치 @@@@@@@@@@ " method="GET" class="form-bottom">
-                        <button name="attention" type="button" class="btn btn-primary btn-attention">관심있어요!</button>
-                    </form>
-                </a>
-                <div class="card-footer text-muted">
-                    <span class="float-left">2018-8-17</span><span class="float-right"><img class="small-icon" src="../public/images/heart-solid.svg" alt="하트" title="관심"> <%= @@@@@ 관심자 수 @@@@@ %> &nbsp; <img class="small-icon" src="../public/images/user-check-solid.svg" alt="사람-체크" title="참여자"> <%= @@@@@ 참여자 수 @@@@@ %></span>
-                </div>
-            </div>
-        </div>
     </div>
 
-
-
-    <!-- <div class="bg-primary sidebar">
-        asdf<br>
-        asdf<br>
-        asdf<br>
-        asdf<br>
-        asdf<br>
-        asdf<br>
-        asdf<br>
-    </div> -->
-
-
-
-    <!-- <div class="col-md-auto">
-        <canvas id="myChart" ></canvas>
-    </div> -->
 </body>
 </html>
