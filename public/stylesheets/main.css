@@ -89,10 +89,25 @@
     padding-top: 7rem !important;
 }
 .menu-r {
-    position: fixed;
+    /* position: fixed;
     top: 0;
-    right: 3rem;
+    right: 3rem; */
+    float: right;
+    margin-right: 3rem;
 }
 .b-radius {
     border-radius: 0.25rem
+}
+.card:hover {
+    transition: 0.1s;
+    /* transform: rotate(9999deg); */
+}
+.card:hover > .card-body {
+    background-color: #f3f3f3;
+    /* background-image: url("https://i.ytimg.com/vi/Yj7ja6BANLM/maxresdefault.jpg"); */
+    background-position: center;
+}
+.card:hover > .card-header, .card:hover > .card-footer {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: 0.1s;
 }
