@@ -158,11 +158,10 @@
 
         <form action="===== 게시글 위치 =====" method="GET">
 
-            <!-- <h1 class="mb-5">제목</h1> -->
             <h2>
                 <div class="form-group">
                     <label for="main-title">주 제목</label>
-                    <input name="===== 주 제목 ======" type="text" class="form-control form-control-lg" id="main-title" placeholder="제목 입력 칸">
+                    <input name="===== 주 제목 ======" type="text" class="form-control form-control-lg" id="main-title" placeholder="제목 입력 칸" required>
                     <small id="emailHelp" class="form-text text-muted" required>게시글 카드의 가장 상단에 노출됩니다.</small>
                 </div>
             </h2>
@@ -182,7 +181,7 @@
             <h5>
                 <div class="form-group">
                     <label for="main-text">본문</label>
-                    <textarea name="===== 본문 =====" class="form-control" rows="15" id="main-text"></textarea>
+                    <textarea name="===== 본문 =====" class="form-control" rows="15" id="main-text" required></textarea>
                     <small id="emailHelp" class="form-text text-muted">카레먹고싶다.</small>
                 </div>
             </h5>
@@ -192,7 +191,7 @@
             <div class="dropdown-divider mt-6 mb-5"></div>
 
             <div class="input-group mb-4">
-                <input name="===== 후원 받을 금액 =====" type="number" class="form-control" placeholder="후원 받을 금액">
+                <input name="===== 후원 받을 금액 =====" type="number" class="form-control" placeholder="후원 받을 금액" required>
                 <div class="input-group-append">
                     <span class="input-group-text">원</span>
                 </div>
