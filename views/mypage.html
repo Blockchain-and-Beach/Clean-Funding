@@ -31,19 +31,12 @@
     <link rel="stylesheet" href="../public/stylesheets/main.css">
     <!-- <link rel="stylesheet" href="/stylesheets/main.css"> -->
 
-    <!-- ejs -->
-    <script type="text/javascript">
-        var title = "<%= post.title %>";
-        var totarPrice = "<%= requestPaymentLists.totarPrice %>";
-    </script>
-
     <!-- JS -->
     <script src="../public/scripts/main.js"></script>
     <!-- <script src="/scripts/main.js"></script> -->
 
 
 </head>
-
 <body class="bg-light">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,7 +57,7 @@
                         </a>
                         <a class="dropdown-item" href="#">마이페이지</a>
                         <a class="dropdown-item" href="#">
-                            나의 잔고<br>
+                            나의 월렛<br>
                             <div class="text-right"><%= money %>원</div>
                         </a>
                         <div class="dropdown-divider"></div>
@@ -79,7 +72,7 @@
                 </li>
             </ul>
 
-
+            
             <!-- <ul class="navbar-nav">
                 <a class="text-center" href="#">
                     <img class="m-auto" src="../public/images/logo/logo-3-64.svg">
@@ -152,61 +145,126 @@
         </div>
     </nav>
 
-
+    
     <!-- header - end -->
+
+
     <div class="col-md-8 bg-white p-5 m-auto pt-7">
 
-        <div class="display-4 mb-6">글쓰기</div>
+        <div class="display-4 mb-5">마이페이지</div>
 
-        <form action="===== 게시글 위치 =====" method="GET">
+        <div class="display-6">회원님의 기본 정보를 조회할 수 있습니다.</div>
 
-            <h2>
-                <div class="form-group">
-                    <label for="main-title">주 제목</label>
-                    <input name="===== 주 제목 ======" type="text" class="form-control form-control-lg" id="main-title" placeholder="제목 입력 칸" required>
-                    <small id="emailHelp" class="form-text text-muted" required>게시글 카드의 가장 상단에 노출됩니다.</small>
-                </div>
-            </h2>
+        <div class="dropdown-divider mt-4 mb-4"></div>
 
-            <div class="dropdown-divider mt-5 mb-5"></div>
-
-            <h4>
-                <div class="form-group">
-                    <label for="sub-title">부 제목</label>
-                    <input name="===== 부 제목 =====" type="text" class="form-control" id="sub-title" placeholder="제목 입력 칸" required>
-                    <small id="emailHelp" class="form-text text-muted">주 제목의 하단에 위치하게 됩니다.</small>
-                </div>
-            </h4>
-
-            <div class="dropdown-divider mt-5 mb-6"></div>
-
-            <h5>
-                <div class="form-group">
-                    <label for="main-text">본문</label>
-                    <textarea name="===== 본문 =====" class="form-control" rows="15" id="main-text" required></textarea>
-                    <small id="emailHelp" class="form-text text-muted">카레먹고싶다.</small>
-                </div>
-            </h5>
-
-            
-
-            <div class="dropdown-divider mt-6 mb-5"></div>
-
-            <div class="input-group mb-4">
-                <input name="===== 후원 받을 금액 =====" type="number" class="form-control" placeholder="후원 받을 금액" required>
-                <div class="input-group-append">
-                    <span class="input-group-text">원</span>
+        <blockquote class="b-thin sd-header-border">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4 style="margin:0;">
+                    아이디(ID) 정보
+                    </h4>
                 </div>
             </div>
-            
-            <div class="text-right">
-                <button type="submit" class="btn btn-primary">글 올리기</button>
+        </blockquote>
+
+        <div class="sd-intro-p mb-4">
+            <div class="row form-one-line">
+                <div class="col-sm-9">
+                    <div class="row form-group">
+                        <div class="col-sm-2">
+                            아이디
+                        </div>
+                        <div class="col-sm-5">
+                            <%= ===== id ===== %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <blockquote class="b-thin sd-header-border mb-4">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4 style="margin:0;">
+                        기본 정보
+                    </h4>
+                </div>
+            </div>
+        </blockquote>
+
+        <div class="sd-intro-p mb-4">
+            <div class="row form-one-line">
+                <div class="col-sm-9">
+                    <div class="row form-group">
+                        <div class="col-sm-2">
+                            닉네임
+                        </div>
+                        <div class="col-sm-5">
+                            <%= ===== 닉네임 ===== %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <blockquote class="b-thin sd-header-border mb-4">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4 style="margin:0;">
+                        회원님의 월렛
+                    </h4>
+                </div>
+            </div>
+        </blockquote>
+
+        <div class="row form-group">
+            <div class="col-sm-12">
+                <div class="row form-group form-one-line">
+                    <div class="col-sm-5">
+                        동기화된 월렛들
+                    </div>
+                    <div class="col-sm-7">
+                        <% for (var i = 0; i < 계좌번호.lenth; i++) { %>
+                            <%= ===== 계좌번호[i] ===== %><br>
+                        <% } %>
+                    </div>
+                </div>
+                <h2>월렛 추가</h2>
             </div>
 
-        </form>
+
+            <div class="form-group col-md-3">
+                <label for="add-wallet">
+                    계좌번호를 입력하세요.
+                </label>
+                <select id="add-wallet" class="form-control">
+                    <option value="kb" selected>KB국민은행</option>
+                    <option value="uli">우리은행</option>
+                    <option value="sc">SC제일은행</option>
+                    <option value="ct">씨티은행</option>
+                    <option value="keb">KEB하나은행</option>
+                    <option value="sinhan">신한은행</option>
+                </select>
+            </div>
+            <div class="form-group col-md-8">
+                <label for="inputZip">하이픈('-')을 꼭 포함시켜주세요</label>
+                <input type="text" class="form-control" placeholder="0000-0000-0000-0000">
+            </div>
+            
+        </div>
+
+        <div class="form-group"> 
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">추가하기</button>
+            </div>
+        </div>
 
 
     </div>
+
+    
+
 
 </body>
 </html>

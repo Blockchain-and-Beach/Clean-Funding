@@ -74,3 +74,73 @@ onload = function () {
         return x;
     }
 };
+
+
+
+
+/*
+    $(function(){
+        var selectugtCtt = document.getElementById("mophnNo-prefix-ugtCtt");
+        var valueugtCtt = document.getElementById("mophnNo-mask-ugtCtt");
+
+        if(selectugtCtt.value == "" || selectugtCtt.value == "-") {
+            $("#mophnNo-input-ugtCtt").attr("readonly",true);
+            $("#mophnNo-mask-ugtCtt").attr("disabled",true);
+        }
+
+        $(selectugtCtt).on('change',function(){
+            var selectVal = selectugtCtt.value;
+            var valueVal = valueugtCtt.value;
+
+            if(selectVal == "" || selectVal == null) {
+                $("#mophnNo-prefix-ugtCtt").val("");
+                $("#mophnNo-input-ugtCtt").val("");
+                $("#mophnNo-mask-ugtCtt").val("");
+                $("#mophnNo-input-ugtCtt").attr("readonly",true);
+                $("#mophnNo-mask-ugtCtt").attr("disabled",true);
+            } else if(selectVal == '-') {
+                $("#mophnNo-prefix-ugtCtt").val("-");
+                $("#mophnNo-input-ugtCtt").val("-");
+                $("#mophnNo-mask-ugtCtt").val("");
+                $("#mophnNo-input-ugtCtt").attr("readonly",true);
+                $("#mophnNo-mask-ugtCtt").attr("disabled",true);
+            } else if(selectVal != "-" || selectVal != "" || selectVal != null){
+                $("#mophnNo-input-ugtCtt").attr("readonly",false);
+                $("#mophnNo-mask-ugtCtt").attr("disabled",false);
+                document.getElementById("mophnNo-input-ugtCtt").value= selectVal+"-"+valueVal;
+            }
+        });
+
+        $(valueugtCtt).keydown(function(){
+            var selectVal = selectugtCtt.value;
+            var valueVal = valueugtCtt.value;
+            document.getElementById("mophnNo-input-ugtCtt").value= selectVal+"-"+valueVal;
+        });
+
+        $(valueugtCtt).keyup(function(){
+            var selectVal = selectugtCtt.value;
+            var valueVal = valueugtCtt.value;
+            document.getElementById("mophnNo-input-ugtCtt").value= selectVal+"-"+valueVal;
+        });
+
+        if($(valueugtCtt).val() == "-") {
+            $(valueugtCtt).val("");
+        }
+    })
+
+    // 자동 하이푼(안되는 경우가 있어서 만듦)
+    function phoneNum(obj) {
+        var selectugtCtt = document.getElementById("mophnNo-prefix-ugtCtt");
+        var valueugtCtt = document.getElementById("mophnNo-mask-ugtCtt");
+        var num = $(obj).val().replace(/[^0-9]/g,"");
+        var number = "";
+
+        if(num.length == 7) {
+            number = num.replace(/(^[0-9]{3})([0-9]{4})/,"$1-$2");
+        } else {
+            number = num.replace(/(^[0-9]{4})([0-9]{4})/,"$1-$2");
+        }
+
+        $(obj).val(number);
+        }
+ */
