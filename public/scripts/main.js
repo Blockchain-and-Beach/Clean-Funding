@@ -38,10 +38,34 @@ onload = function () {
     // });
 
     setInterval(function () {
+
+        // 목표금액 + 승인된 금액
         approvedAmountServerCommunication();
 
     }, 1000);
 
+
+    // var approvedAmount = document.querySelector("#approved-amount");
+
+    // function approvedAmountServerCommunication() {
+    //     let result;
+    //     let path;
+    //     let low, high;
+                                        
+    //     path = fetch("/" + title + approvedAmount);
+    //     path = path.then(function (response) {
+    //         return response.json();
+    //     })
+    //     path.then(function (myJSON) {
+    //         low = myJSON.amount;
+    //     });
+        
+    //     high = totarPrice;
+
+    //     // result = low * 100 / high;
+
+    //     approvedAmount.style.width = (low * 100 / high) + "%";
+    // }
 
     var approvedAmount = document.querySelector("#approved-amount");
 
