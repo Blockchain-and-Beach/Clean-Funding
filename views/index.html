@@ -47,8 +47,8 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-secondary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <!-- 닉네임 -->
-                        <%= nickname %>
+                        <!-- 이름 -->
+                        <%= name %>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item not-active" href="#">
@@ -58,7 +58,7 @@
                         <a class="dropdown-item" href="#">마이페이지</a>
                         <a class="dropdown-item" href="#">
                             나의 월렛<br>
-                            <div class="text-right"><%= money %>원</div>
+                            <div class="text-right"><%= balance %>원</div>
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">글쓰기</a>
@@ -87,32 +87,32 @@
                     <ul class="dropdown-menu dropdown-menu-right mt-0 asdf">
                         <li class="px-1 py-2">
                             <!-- 회원가입 폼 -->
-                            <form action="@@@@@@@@@@ 폼 보낼 위치 @@@@@@@@@@" method="POST" class="form" role="form">
+                            <form action="/signUp" method="POST" class="form" role="form">
                                 <div class="cursor-pointe custom-control custom-radio display-inline-block">
-                                    <input value="individuals" type="radio" class="custom-control-input" id="radio1" name="sign-up-radio" checked>
+                                    <input value="individual" type="radio" class="custom-control-input" id="radio1" name="sign-up-radio" checked>
                                     <label class="custom-control-label" for="radio1">개인</label>
                                 </div>
                                 &nbsp;
                                 <!-- Group of default radios - option 2 -->
                                 <div class="custom-control custom-radio display-inline-block">
-                                    <input value="organizations" type="radio" class="cursor-pointe custom-control-input" id="radio2" name="sign-up-radio">
+                                    <input value="organization" type="radio" class="cursor-pointe custom-control-input" id="radio2" name="sign-up-radio">
                                     <label class="custom-control-label" for="radio2">단체</label>
                                 </div>
                                 <div class="form-group">
-                                    <input name="@@@@@ nickname @@@@@" id="nicknameInput" placeholder="nickname" class="form-control form-control-sm" type="text" required="">
+                                    <input name="name" id="nicknameInput" placeholder="nickname" class="form-control form-control-sm" type="text" required="">
                                 </div>
                                 <div class="form-group">
-                                    <input name="@@@@@ id @@@@@" id="idInput" placeholder="ID" class="form-control form-control-sm" type="text" required="">
+                                    <input name="ID" placeholder="ID" class="form-control form-control-sm" type="text" required="">
                                 </div>
                                 <div class="form-group">
-                                    <input name="@@@@@ password @@@@@" id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="password" required="">
+                                    <input name="PW" placeholder="Password" class="form-control form-control-sm" type="password" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input name="walletAddress" placeholder="Wallet address" class="form-control form-control-sm" type="text" required="">
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
                                 </div>
-                                <!-- <div class="form-group text-center">
-                                    <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small>
-                                </div> -->
                             </form>
                         </li>
                     </ul>
@@ -124,19 +124,25 @@
                     <ul class="dropdown-menu dropdown-menu-right mt-0">
                         <li class="px-1 py-2">
                             <!-- 로그인 폼 -->
-                            <form action="@@@@@@@@@@ 폼 보낼 위치 @@@@@@@@@@" method="POST" class="form" role="form">
-                                <div class="form-group">
-                                    <input name="@@@@@ id @@@@@" placeholder="ID" class="form-control form-control-sm" type="text" required="">
+                            <form action="/login" method="POST" class="form" role="form">
+                                <div class="cursor-pointe custom-control custom-radio display-inline-block">
+                                    <input value="individual" type="radio" class="custom-control-input" id="radio3" name="sign-up-radio" checked>
+                                    <label class="custom-control-label" for="radio3">개인</label>
+                                </div>
+                                &nbsp;
+                                <div class="custom-control custom-radio display-inline-block">
+                                    <input value="organization" type="radio" class="cursor-pointe custom-control-input" id="radio4" name="sign-up-radio">
+                                    <label class="custom-control-label" for="radio4">단체</label>
                                 </div>
                                 <div class="form-group">
-                                    <input name="@@@@@ password @@@@@" id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="password" required="">
+                                    <input name="ID" placeholder="ID" class="form-control form-control-sm" type="text" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input name="PW" placeholder="Password" class="form-control form-control-sm" type="password" required="">
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary btn-block">Login</button>
                                 </div>
-                                <!-- <div class="form-group text-center">
-                                    <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small>
-                                </div> -->
                             </form>
                         </li>
                     </ul>
@@ -161,9 +167,9 @@
                 <a class="card-body display-block">
                     <h5 class="card-title">방학기간 연장 시위</h5>
                     <h6 class="card-subtitle mb-2 text-muted text-shadow">폭염으로 인한 방학기간 연장을 주장합니다</h6>
-                    <p class="card-text">시위에 필요한 팜플렛, 깃발, 두건, 총기류, 간식 등을 구매하기위한 후원금을 모으고있습니다. 여러분들의 많은 관심 부탁드립니다.</p>
+                    <!-- <p class="card-text">시위에 필요한 팜플렛, 깃발, 두건, 총기류, 간식 등을 구매하기위한 후원금을 모으고있습니다. 여러분들의 많은 관심 부탁드립니다.</p> -->
                     <div class="text-right small text-color-soft"><i>아무개</i></div>
-                    <form action=" @@@@@@@@@@ 위치 @@@@@@@@@@ " method="GET" class="form-bottom">
+                    <form action="#" method="GET" class="form-bottom">
                         <button name="attention" type="button" class="btn btn-primary btn-attention">관심있어요!</button>
                     </form>
                 </a>
@@ -174,7 +180,7 @@
         </div>
 
 
-        <% for (var i = 0; i < 게시판.length; i++) { %>
+        <% for (var i = 0; i < posts.length; i++) { %>
             <div class="display-inline-block text-left">
                 <div class="card">
                     <div class="card-header">
@@ -184,16 +190,16 @@
                         <span class="float-left small-2">모금된 금액</span><spna class="float-right small-2">목표 금액</spna>
                     </div>
                     <a class="card-body display-block">
-                        <h5 class="card-title"><%= @@@@@ 제목 @@@@@ %></h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-shadow"><%= @@@@@ 부제목 @@@@@ %></h6>
-                        <p class="card-text"><%= @@@@@ 요약한 내용 @@@@@ %></p>
-                        <div class="text-right small text-color-soft"><i><%= @@@@@ 작성자 @@@@@ %></i></div>
-                        <form action=" @@@@@@@@@@ 위치 @@@@@@@@@@ " method="GET" class="form-bottom">
+                        <h5 class="card-title"><%= posts[i].title %></h5>
+                        <h6 class="card-subtitle mb-2 text-muted text-shadow"><%= posts[i].subTitle %></h6>
+                        <!-- <p class="card-text"><%= 요약한 내용 %></p> -->
+                        <div class="text-right small text-color-soft"><i><%= posts[i].author %></i></div>
+                        <form action="#" method="GET" class="form-bottom">
                             <button name="attention" type="button" class="btn btn-primary btn-attention">관심있어요!</button>
                         </form>
                     </a>
                     <div class="card-footer text-muted">
-                        <span class="float-left">2018-8-17</span><span class="float-right"><img class="small-icon" src="../public/images/heart-solid.svg" alt="하트" title="관심"> <%= @@@@@ 관심자 수 @@@@@ %> &nbsp; <img class="small-icon" src="../public/images/user-check-solid.svg" alt="사람-체크" title="참여자"> <%= @@@@@ 참여자 수 @@@@@ %></span>
+                        <span class="float-left"><%= posts[i].Date %></span><span class="float-right"><img class="small-icon" src="../public/images/heart-solid.svg" alt="하트" title="관심"> 0 &nbsp; <img class="small-icon" src="../public/images/user-check-solid.svg" alt="사람-체크" title="참여자"> <%= posts[i].sponsors.length %></span>
                     </div>
                 </div>
             </div>

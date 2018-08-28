@@ -47,8 +47,8 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-secondary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <!-- 닉네임 -->
-                        <%= nickname %>
+                        <!-- 이름 -->
+                        <%= name %>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item not-active" href="#">
@@ -58,7 +58,7 @@
                         <a class="dropdown-item" href="#">마이페이지</a>
                         <a class="dropdown-item" href="#">
                             나의 월렛<br>
-                            <div class="text-right"><%= money %>원</div>
+                            <div class="text-right"><%= balance %>원</div>
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">글쓰기</a>
@@ -87,32 +87,32 @@
                     <ul class="dropdown-menu dropdown-menu-right mt-0 asdf">
                         <li class="px-1 py-2">
                             <!-- 회원가입 폼 -->
-                            <form action="@@@@@@@@@@ 폼 보낼 위치 @@@@@@@@@@" method="POST" class="form" role="form">
+                            <form action="/signUp" method="POST" class="form" role="form">
                                 <div class="cursor-pointe custom-control custom-radio display-inline-block">
-                                    <input value="individuals" type="radio" class="custom-control-input" id="radio1" name="sign-up-radio" checked>
+                                    <input value="individual" type="radio" class="custom-control-input" id="radio1" name="sign-up-radio" checked>
                                     <label class="custom-control-label" for="radio1">개인</label>
                                 </div>
                                 &nbsp;
                                 <!-- Group of default radios - option 2 -->
                                 <div class="custom-control custom-radio display-inline-block">
-                                    <input value="organizations" type="radio" class="cursor-pointe custom-control-input" id="radio2" name="sign-up-radio">
+                                    <input value="organization" type="radio" class="cursor-pointe custom-control-input" id="radio2" name="sign-up-radio">
                                     <label class="custom-control-label" for="radio2">단체</label>
                                 </div>
                                 <div class="form-group">
-                                    <input name="@@@@@ nickname @@@@@" id="nicknameInput" placeholder="nickname" class="form-control form-control-sm" type="text" required="">
+                                    <input name="name" id="nicknameInput" placeholder="nickname" class="form-control form-control-sm" type="text" required="">
                                 </div>
                                 <div class="form-group">
-                                    <input name="@@@@@ id @@@@@" id="idInput" placeholder="ID" class="form-control form-control-sm" type="text" required="">
+                                    <input name="ID" placeholder="ID" class="form-control form-control-sm" type="text" required="">
                                 </div>
                                 <div class="form-group">
-                                    <input name="@@@@@ password @@@@@" id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="password" required="">
+                                    <input name="PW" placeholder="Password" class="form-control form-control-sm" type="password" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input name="walletAddress" placeholder="Wallet address" class="form-control form-control-sm" type="text" required="">
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
                                 </div>
-                                <!-- <div class="form-group text-center">
-                                    <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small>
-                                </div> -->
                             </form>
                         </li>
                     </ul>
@@ -124,19 +124,25 @@
                     <ul class="dropdown-menu dropdown-menu-right mt-0">
                         <li class="px-1 py-2">
                             <!-- 로그인 폼 -->
-                            <form action="@@@@@@@@@@ 폼 보낼 위치 @@@@@@@@@@" method="POST" class="form" role="form">
-                                <div class="form-group">
-                                    <input name="@@@@@ id @@@@@" placeholder="ID" class="form-control form-control-sm" type="text" required="">
+                            <form action="/login" method="POST" class="form" role="form">
+                                <div class="cursor-pointe custom-control custom-radio display-inline-block">
+                                    <input value="individual" type="radio" class="custom-control-input" id="radio3" name="sign-up-radio" checked>
+                                    <label class="custom-control-label" for="radio3">개인</label>
+                                </div>
+                                &nbsp;
+                                <div class="custom-control custom-radio display-inline-block">
+                                    <input value="organization" type="radio" class="cursor-pointe custom-control-input" id="radio4" name="sign-up-radio">
+                                    <label class="custom-control-label" for="radio4">단체</label>
                                 </div>
                                 <div class="form-group">
-                                    <input name="@@@@@ password @@@@@" id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="password" required="">
+                                    <input name="ID" placeholder="ID" class="form-control form-control-sm" type="text" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input name="PW" placeholder="Password" class="form-control form-control-sm" type="password" required="">
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary btn-block">Login</button>
                                 </div>
-                                <!-- <div class="form-group text-center">
-                                    <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small>
-                                </div> -->
                             </form>
                         </li>
                     </ul>
@@ -161,7 +167,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h4 style="margin:0;">
-                    아이디(ID) 정보
+                        아이디(ID) 정보
                     </h4>
                 </div>
             </div>
@@ -175,7 +181,7 @@
                             아이디
                         </div>
                         <div class="col-sm-5">
-                            <%= ===== id ===== %>
+                            <%= ID %>
                         </div>
                     </div>
                 </div>
@@ -200,7 +206,7 @@
                             닉네임
                         </div>
                         <div class="col-sm-5">
-                            <%= ===== 닉네임 ===== %>
+                            <%= name %>
                         </div>
                     </div>
                 </div>
@@ -222,12 +228,17 @@
             <div class="col-sm-12">
                 <div class="row form-group form-one-line">
                     <div class="col-sm-5">
-                        동기화된 월렛들
+                        동기화된 월렛
                     </div>
                     <div class="col-sm-7">
-                        <% for (var i = 0; i < 계좌번호.lenth; i++) { %>
-                            <%= ===== 계좌번호[i] ===== %><br>
-                        <% } %>
+                        <!-- <% for (var i = 0; i < 계좌번호.lenth; i++) { %> -->
+                            <!-- <%= 계좌번호[i]  %><br> -->
+                        <!-- <% } %> -->
+
+                        <!-- 장성윤 계좌번호 -->
+                        국민은행 424001-01-316497<br>
+
+                        <br>
                     </div>
                 </div>
                 <h2>월렛 추가</h2>

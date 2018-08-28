@@ -54,8 +54,8 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-secondary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <!-- 닉네임 -->
-                        <%= nickname %>
+                        <!-- 이름 -->
+                        <%= name %>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item not-active" href="#">
@@ -64,8 +64,8 @@
                         </a>
                         <a class="dropdown-item" href="#">마이페이지</a>
                         <a class="dropdown-item" href="#">
-                            나의 잔고<br>
-                            <div class="text-right"><%= money %>원</div>
+                            나의 월렛<br>
+                            <div class="text-right"><%= balance %>원</div>
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">글쓰기</a>
@@ -79,7 +79,7 @@
                 </li>
             </ul>
 
-
+            
             <!-- <ul class="navbar-nav">
                 <a class="text-center" href="#">
                     <img class="m-auto" src="../public/images/logo/logo-3-64.svg">
@@ -94,32 +94,32 @@
                     <ul class="dropdown-menu dropdown-menu-right mt-0 asdf">
                         <li class="px-1 py-2">
                             <!-- 회원가입 폼 -->
-                            <form action="@@@@@@@@@@ 폼 보낼 위치 @@@@@@@@@@" method="POST" class="form" role="form">
+                            <form action="/signUp" method="POST" class="form" role="form">
                                 <div class="cursor-pointe custom-control custom-radio display-inline-block">
-                                    <input value="individuals" type="radio" class="custom-control-input" id="radio1" name="sign-up-radio" checked>
+                                    <input value="individual" type="radio" class="custom-control-input" id="radio1" name="sign-up-radio" checked>
                                     <label class="custom-control-label" for="radio1">개인</label>
                                 </div>
                                 &nbsp;
                                 <!-- Group of default radios - option 2 -->
                                 <div class="custom-control custom-radio display-inline-block">
-                                    <input value="organizations" type="radio" class="cursor-pointe custom-control-input" id="radio2" name="sign-up-radio">
+                                    <input value="organization" type="radio" class="cursor-pointe custom-control-input" id="radio2" name="sign-up-radio">
                                     <label class="custom-control-label" for="radio2">단체</label>
                                 </div>
                                 <div class="form-group">
-                                    <input name="@@@@@ nickname @@@@@" id="nicknameInput" placeholder="nickname" class="form-control form-control-sm" type="text" required="">
+                                    <input name="name" id="nicknameInput" placeholder="nickname" class="form-control form-control-sm" type="text" required="">
                                 </div>
                                 <div class="form-group">
-                                    <input name="@@@@@ id @@@@@" id="idInput" placeholder="ID" class="form-control form-control-sm" type="text" required="">
+                                    <input name="ID" placeholder="ID" class="form-control form-control-sm" type="text" required="">
                                 </div>
                                 <div class="form-group">
-                                    <input name="@@@@@ password @@@@@" id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="password" required="">
+                                    <input name="PW" placeholder="Password" class="form-control form-control-sm" type="password" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input name="walletAddress" placeholder="Wallet address" class="form-control form-control-sm" type="text" required="">
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
                                 </div>
-                                <!-- <div class="form-group text-center">
-                                    <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small>
-                                </div> -->
                             </form>
                         </li>
                     </ul>
@@ -131,19 +131,25 @@
                     <ul class="dropdown-menu dropdown-menu-right mt-0">
                         <li class="px-1 py-2">
                             <!-- 로그인 폼 -->
-                            <form action="@@@@@@@@@@ 폼 보낼 위치 @@@@@@@@@@" method="POST" class="form" role="form">
-                                <div class="form-group">
-                                    <input name="@@@@@ id @@@@@" placeholder="ID" class="form-control form-control-sm" type="text" required="">
+                            <form action="/login" method="POST" class="form" role="form">
+                                <div class="cursor-pointe custom-control custom-radio display-inline-block">
+                                    <input value="individual" type="radio" class="custom-control-input" id="radio3" name="sign-up-radio" checked>
+                                    <label class="custom-control-label" for="radio3">개인</label>
+                                </div>
+                                &nbsp;
+                                <div class="custom-control custom-radio display-inline-block">
+                                    <input value="organization" type="radio" class="cursor-pointe custom-control-input" id="radio4" name="sign-up-radio">
+                                    <label class="custom-control-label" for="radio4">단체</label>
                                 </div>
                                 <div class="form-group">
-                                    <input name="@@@@@ password @@@@@" id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="password" required="">
+                                    <input name="ID" placeholder="ID" class="form-control form-control-sm" type="text" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input name="PW" placeholder="Password" class="form-control form-control-sm" type="password" required="">
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary btn-block">Login</button>
                                 </div>
-                                <!-- <div class="form-group text-center">
-                                    <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small>
-                                </div> -->
                             </form>
                         </li>
                     </ul>
@@ -152,7 +158,7 @@
         </div>
     </nav>
 
-
+    
     <!-- header - end -->
 
     <div class="col-md-8 bg-white p-5 m-auto pt-7">
@@ -162,12 +168,15 @@
         <div class="dropdown-divider mt-4 mb-4"></div>
 
         <form action=" ===== 사용자의 월렛 위치 ===== ">
-            <% for (var i = 0; i < 사용자.계좌.length; i++) { %>
+            <!-- <% for (var i = 0; i < .length; i++) { %> -->
                 <div class="cursor-pointe custom-control custom-radio display-inline-block">
                     <input value=" ===== <%= 사용자.계좌[i].이름 %> =====" type="radio" class="custom-control-input" id="radio<%= [i] %>" name="select-account" checked>
-                    <label class="custom-control-label" for="radio<%= [i] %>"> ===== <%= 사용자.계좌[i].이름 %> =====</label>
+                    <label class="custom-control-label" for="radio<%= [i] %>">
+                        <!-- <%= 사용자.계좌[i].이름 %> -->
+                        국민은행 424001-01-316497
+                    </label>
                 </div>
-            <% } %>
+            <!-- <% } %> -->
             <div class="input-group mt-3 mb-3">
                 <input name="@@@@@ admission @@@@@" type="number" class="form-control" placeholder="승인에 사용 할 금액">
                 <div class="input-group-append">
