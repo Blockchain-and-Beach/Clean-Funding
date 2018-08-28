@@ -14,10 +14,10 @@ import {
 
  } from 'nem2-sdk';
 
-function sendMoney(nsName:string, mosaicName:string, senderPrivateKey:string, receiverPublicKey:string, coinNum:number, message="")
-{
-    const recipientAddress = Address.createFromPublicKey(receiverPublicKey, NetworkType.MIJIN_TEST);
-
+ function sendMoney(nsName:string, mosaicName:string, senderPrivateKey:string, receiverAddress:string, coinNum:number, message?:string)
+ {
+    //senderPrivateKey: 웹에서 후원자가 자신의 privateKey를 입력하는 방식.
+    const recipientAddress = Address.createFromRawAddress(receiverAddress);
     const transferTransaction = TransferTransaction.create(
         Deadline.create(),
         recipientAddress,
