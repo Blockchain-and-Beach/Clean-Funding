@@ -31,6 +31,13 @@
     <link rel="stylesheet" href="../public/stylesheets/main.css">
     <!-- <link rel="stylesheet" href="/stylesheets/main.css"> -->
 
+    <!-- ejs -->
+    <script type="text/javascript">
+        var userId = "<%= user.ID %>";
+        var title = "<%= post.title %>";
+        var totarPrice = "<%= requestPaymentLists.totarPrice %>";
+    </script>
+
     <!-- JS -->
     <script src="../public/scripts/main.js"></script>
     <!-- <script src="/scripts/main.js"></script> -->
@@ -45,7 +52,7 @@
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
+                <li id="user-information" class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-secondary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <!-- 이름 -->
                         <%= user.name %>
