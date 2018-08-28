@@ -18,6 +18,7 @@ router.get('/', (req, res) => {
     })
     .post('/upload', (req, res) => {
         if (!findByTitle(req.body.title)) {
+            req.body.author = req.session.signed;
             const post = new Post(req.body);
             post.save();
             res.redirect('/'+req.body.title);
