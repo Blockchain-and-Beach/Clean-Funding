@@ -17,6 +17,7 @@ import {
 
  function rejectComment(senderPrivateKey:string ,recieverAddress:string/*address*/, rejectMessage?:string)
  {
+     //senderPrivateKey: 웹에서 후원자가 자신의 privateKey를 입력하는 방식.
      const recipientAddress = Address.createFromRawAddress(recieverAddress);
      const transferRejectTransaction = TransferTransaction.create(
          Deadline.create(),
@@ -31,5 +32,3 @@ import {
 
     transactionHttp.announce(signedTransaction).subscribe(x => console.log(x), err => console.error(err));
 }
-
-export {rejectComment}
