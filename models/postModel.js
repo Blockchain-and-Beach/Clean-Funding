@@ -33,17 +33,19 @@ const postSchema = new mongoose.Schema({
     goalAmount: {type: Number, required: true},
     sponsors: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
 });
+const postModel = mongoose.model('Post', postSchema);
 
-postSchema.statics.findByTitle = async title => {
+postSchema.static.findByTitle = async title => {
     try {
         return await this.findOne({title: title});
     } catch (err) {
         console.error(err);
     }
 };
-postSchema.statics.findAll = async ()=>{
-    return await find({}).sort({Date:-1});
+
+postSchema.static.findAll =  async ()=>{
+    return  await postModel.find({}).sort({Date:-1});
 };
 
 exports.postSchema = postSchema;
-exports.postModel = mongoose.model('Post', postSchema);
+exports.postModel = postModel;

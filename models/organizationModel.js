@@ -19,8 +19,8 @@ organizationSchema.statics.findByName = async name => {
 organizationSchema.statics.findByPublicKey = async publicKey => {
     return await this.findOne({publicKey: publicKey});
 };
-organizationSchema.statics.validate = organization => {
-    return !findByID(organization.ID) && !findByName(organization.name) && !findByPublicKey(organization.publicKey);
+organizationSchema.statics.validate = async organization => {
+    return  !await findByID(organization.ID) && !await findByName(organization.name) && !await findByPublicKey(organization.publicKey);
 };
 
 organizationSchema.methods.comparePW = (PW, callback) => {

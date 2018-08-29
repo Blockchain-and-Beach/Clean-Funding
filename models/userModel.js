@@ -10,17 +10,17 @@ const userSchema = new mongoose.Schema({
     sponsoredPost: [{type: mongoose.Schema.Types.ObjectId, ref: 'Post'}],
     balance: {type: Number, default: 0}
 });
-userSchema.statics.findByID = async ID => {
+userSchema.static.findByID = async ID => {
     return await this.findOne({ID: ID});
 };
-userSchema.statics.findByNickname = async nickname => {
+userSchema.static.findByNickname = async nickname => {
     return await this.findOne({nickname: nickname});
 };
-userSchema.statics.findByPublicKey = async publicKey => {
+userSchema.static.findByPublicKey = async publicKey => {
     return await this.findOne({publicKey: publicKey});
 };
 
-userSchema.statics.validate = user => {
+userSchema.static.validate = user => {
     return !findByID(user.ID) && !findByNickname(user.nickname) && !findByPublicKey(user.publicKey);
 };
 

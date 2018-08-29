@@ -4,6 +4,7 @@ const router = express.Router();
 const Post = require('../models/postModel').postModel;
 
 router.get('/', (req, res) => {
+    console.log(Post.findAll);
     const results = Post.findAll();
     if(results.length<=0) res.render('index',{posts:[]});
     else res.render('index',{posts:results});
