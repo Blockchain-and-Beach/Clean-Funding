@@ -1,4 +1,4 @@
-import { Account, NetworkType, MosaicInfo, AccountInfo } from 'nem2-sdk';
+import { Account, NetworkType, MosaicInfo, AccountInfo, MosaicAmountView, AccountHttp } from 'nem2-sdk';
 /*
  * vote에 대해서 찬성일 때,
  * 후원할 때 받은 단체의 고유한 모자이크를
@@ -15,7 +15,11 @@ function agree(donaterPrivateKey: string, groupPrivateKey: string, nsName: strin
     const groupAccount = Account.createFromPrivateKey(groupPrivateKey, NetworkType.MIJIN_TEST);
 
     
-    
+    const accountHttp = new AccountHttp('http://localhost:3000');
+    accountHttp.getAccountInfo(donaterAccount.address)
+        .subscribe((accountData: any) => {
+            accountData.
+        }
     console.log();
 }
 
