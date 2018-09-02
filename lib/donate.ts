@@ -16,11 +16,11 @@ import { TransferTransaction, Deadline, Account, NetworkType } from "nem2-sdk";
 
 function donate(donaterPrivateKey: string, groupPrivateKey: string, nsName:string, mosaicName:string, coinNum:number, message?:string): void {
     //후원
-    const donatorAccount = Account.createFromPrivateKey(donaterPrivateKey,NetworkType.MIJIN_TEST);
+    const donaterAccount = Account.createFromPrivateKey(donaterPrivateKey,NetworkType.MIJIN_TEST);
     const groupAccount = Account.createFromPrivateKey(groupPrivateKey,NetworkType.MIJIN_TEST);
     //루트 네임스페이스, 루트 모자이크
     sendMoney('bob', 'won', donaterPrivateKey, groupAccount.publicKey, coinNum, message);
-    sendMoney(nsName,mosaicName,groupPrivateKey, donatorAccount.publicKey, coinNum, message);
+    sendMoney(nsName,mosaicName,groupPrivateKey, donaterAccount.publicKey, coinNum, message);
 }
 console.log(process.env.donater);
 console.log(process.env.group);
