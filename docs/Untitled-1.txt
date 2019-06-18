@@ -1,0 +1,23 @@
+get / => posts 인덱스 페이지 포스트가 최근 순서대로 정렬되어 전달됨
+get /upload => 포스트 업로드 페이지
+get /:title => 포스트 세부정보 title = 특정 포스트의 제목
+get /:title/approvedAmount => 승인된 금액
+get/:title/sumAmount => 모인 금액
+post /upload => 포스트 업로드
+put /:title/like 관심 표현
+
+post donate/:title후원
+post /vote/:title 투표
+post /payment/:title 결제
+
+get /charge 충전 페이지
+post /charge 루트 모자이크 충전
+
+post /login/user 개인 로그인
+post /login/organization 단체 로그인
+
+post /signup/user 개인 회원가입
+post /signup/organization 단체 회원가입
+
+get /payment/request/:title 제목이 title인 프로젝트가 요청한 결제목록 반환
+post /payment/request/:title 제목이 title인 프로젝트가 결제 요청
