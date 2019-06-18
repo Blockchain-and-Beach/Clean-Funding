@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clean Funding</title>
+
+    <!-- 파비콘(favicon) -->
+    <link rel="shortcut icon" href="../public/images/logo/logo-3-64.png" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="/images/logo/logo-3-64.png" type="image/x-icon"> -->
+
+    <!-- 제이쿼리(jQuery) & 파퍼(popper) -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <!-- 부트스트랩(bootstrap) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.8/css/mdb.min.css" rel="stylesheet">
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.8/js/mdb.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../public/stylesheets/main.css">
+    <!-- <link rel="stylesheet" href="/stylesheets/main.css"> -->
+
+    <!-- ejs -->
+    <script type="text/javascript">
+        var userId = "<%= user.ID %>";
+        var title = "<%= post.title %>";
+        var totarPrice = "<%= requestPaymentLists.totarPrice %>";
+    </script>
+
+    <!-- JS -->
+    <script src="../public/scripts/main.js"></script>
+    <!-- <script src="/scripts/main.js"></script> -->
+
+
+</head>
+
+<body class="bg-light">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li id="user-information" class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-secondary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <!-- 이름 -->
+                        <%= user.name %>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item not-active" href="#">
+                            <!-- 아이디 -->
+                            <%= user.ID %>
+                        </a>
+                        <a class="dropdown-item" href="#">마이페이지</a>
+                        <a class="dropdown-item" href="#">
+                            나의 월렛<br>
+                            <div class="text-right"><%= balance %>원</div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">글쓰기</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </li>
+            </ul>
+
+            
+            <!-- <ul class="navbar-nav">
+                <a class="text-center" href="#">
+                    <img class="m-auto" src="../public/images/logo/logo-3-64.svg">
+                </a>
+            </ul> -->
+
+            <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-secondary" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        SIGN UP
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right mt-0 asdf">
+                        <li class="px-1 py-2">
+                            <!-- 회원가입 폼 -->
+                            <form action="/signUp" method="POST" class="form" role="form">
+                                <div class="cursor-pointe custom-control custom-radio display-inline-block">
+                                    <input value="individual" type="radio" class="custom-control-input" id="radio1" name="sign-up-radio" checked>
+                                    <label class="custom-control-label" for="radio1">개인</label>
+                                </div>
+                                &nbsp;
+                                <!-- Group of default radios - option 2 -->
+                                <div class="custom-control custom-radio display-inline-block">
+                                    <input value="organization" type="radio" class="cursor-pointe custom-control-input" id="radio2" name="sign-up-radio">
+                                    <label class="custom-control-label" for="radio2">단체</label>
+                                </div>
+                                <div class="form-group">
+                                    <input name="name" id="nicknameInput" placeholder="nickname" class="form-control form-control-sm" type="text" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input name="ID" placeholder="ID" class="form-control form-control-sm" type="text" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input name="PW" placeholder="Password" class="form-control form-control-sm" type="password" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input name="walletAddress" placeholder="Wallet address" class="form-control form-control-sm" type="text" required="">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-secondary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        LOGIN
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right mt-0">
+                        <li class="px-1 py-2">
+                            <!-- 로그인 폼 -->
+                            <form action="/login" method="POST" class="form" role="form">
+                                <div class="cursor-pointe custom-control custom-radio display-inline-block">
+                                    <input value="individual" type="radio" class="custom-control-input" id="radio3" name="sign-up-radio" checked>
+                                    <label class="custom-control-label" for="radio3">개인</label>
+                                </div>
+                                &nbsp;
+                                <div class="custom-control custom-radio display-inline-block">
+                                    <input value="organization" type="radio" class="cursor-pointe custom-control-input" id="radio4" name="sign-up-radio">
+                                    <label class="custom-control-label" for="radio4">단체</label>
+                                </div>
+                                <div class="form-group">
+                                    <input name="ID" placeholder="ID" class="form-control form-control-sm" type="text" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input name="PW" placeholder="Password" class="form-control form-control-sm" type="password" required="">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    
+    <!-- header - end -->
+
+    <div class="col-md-8 bg-white p-5 m-auto pt-7">
+        <div class="display-4 mb-5">금액 충전하기</div>
+        <div class="display-6">회원님이 설정하신 계좌로부터 월렛에 금액을 충전할 수 있습니다.</div>
+
+        <div class="dropdown-divider mt-4 mb-4"></div>
+
+        <form action=" ===== 사용자의 월렛 위치 ===== ">
+            <!-- <% for (var i = 0; i < .length; i++) { %> -->
+                <div class="cursor-pointe custom-control custom-radio display-inline-block">
+                    <input value=" ===== <%= 사용자.계좌[i].이름 %> =====" type="radio" class="custom-control-input" id="radio<%= [i] %>" name="select-account" checked>
+                    <label class="custom-control-label" for="radio<%= [i] %>">
+                        <!-- <%= 사용자.계좌[i].이름 %> -->
+                        국민은행 424001-01-316497
+                    </label>
+                </div>
+            <!-- <% } %> -->
+            <div class="input-group mt-3 mb-3">
+                <input name="@@@@@ admission @@@@@" type="number" class="form-control" placeholder="승인에 사용 할 금액">
+                <div class="input-group-append">
+                    <span class="input-group-text">원</span>
+                </div>
+            </div>
+            <div class="form-group mt-4"> 
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">충전하기</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

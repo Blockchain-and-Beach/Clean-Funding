@@ -11,7 +11,7 @@ router.post('/user', (req, res) => {
         account.methods.comparePW(PW, (err, result) => {
             if (err) console.error(err);
             else if (result) {
-                req.session.signed = result.ID;
+                req.session.signed = result.name;
                 res.redirect('/');
             }
             else res.send('login failed');

@@ -22,12 +22,12 @@ const paymentListSchema = new mongoose.Schema({
 
 const postSchema = new mongoose.Schema({
     title: {type: String, unique: true, required: true, index: true},
+    subTitle:{type:String,required:true},
     content: {type: String, required: true},
     author: {type: mongoose.Schema.Types.ObjectId, ref: 'Organization', required: true},
     balance: {type: Number, default: 0},
     comments: [{type: commentSchema}],
     requestPaymentLists: [{type: paymentListSchema}],
-    like: {type: Number, default: 0},
     Date: {type: Date, default: Date.now},
     address: {type: String, required: true, unique: true},
     goalAmount: {type: Number, required: true},
